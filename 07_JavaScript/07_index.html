@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS String Manipulation</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="../node_modules/bootstrap-icons/bootstrap-icons.svg"> -->
+  <script src="./07_index.js"></script>
+
+  <style></style>
+  <body class="container-fluid">
+
+    <h1>Payment Details</h1>
+
+    <dl>
+        <dt class="mt-3 mb-2">Credit Card</dt>
+        <dd class="input-group-text">
+            <input type="text" onkeyup="verifyCard()" class="form-control" placeholder="Enter Your Card Number" id="txtCard"> 
+            <img id="pic" alt="" class="input-group-text" width="80" height="34" style="border-radius: 5px;"/></input>
+        </dd>
+
+        <dt class="mt-3 mb-2">Your Outlook</dt>
+        <dd>
+          <input type="email" id="txtEmail" onblur="verifyEmail()" class="form-control">
+        </dd>
+        <span id="errMsg" class="mb-3"></span>
+
+        <dt class="mb-2">Password</dt>
+        <dd>
+          <input type="text" id="txtPass" onkeyup="varifyPassword()" class="form-control">
+        </dd>
+
+        <dd class="mt-2">
+          <meter style="width: 100%;"  min="1" max="100" id="meter"></meter>
+        </dd>
+        <span id="errPass"></span>
+    </dl>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
