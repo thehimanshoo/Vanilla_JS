@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KFC Order Details</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/bootstrap-icons.svg" />
+</head>
+<link rel="stylesheet" href="./09_style.css">
+<script src="./09_index.js"></script>
+
+<body class="container-fluid">
+  <section>
+    <div>
+      <img src="../Image/KFC_Theme.png" width="100%" style="overflow: hidden" alt="" />
+    </div>
+
+  <!-- Order Summary -->
+
+  <div class="accordion mt-3" id="orderForm">
+
+    <!-- Customer Details -->
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <button type="button" data-bs-target="#Customer" data-bs-toggle="collapse" class="btn btn-danger w-100">Customer
+          Details</button>
+      </div>
+      <div class="accordion-collapse collapse" id="Customer" data-bs-parent="#orderForm">
+        <div class="accordion-body">
+          <dl>
+            <dt class="mb-1">Customer Name</dt>
+            <dd>
+              <input type="text" class="form-control" id="txtName">
+            </dd>
+            <dt class="mb-1">Mobile Number</dt>
+            <dd>
+              <input type="text" class="form-control" id="txtMobile">
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meal Details -->
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <button type="button" class="btn btn-danger w-100" data-bs-target="#txtMeal" data-bs-toggle="collapse">Meal
+          Option</button>
+      </div>
+      <div class="accordion-collapse collapse" id="txtMeal" data-bs-parent="#orderForm">
+        <div class="accordion-body text-center">
+          <div class="row mb-2">
+
+            <!-- Column Start -->
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT243.jpg?ver=30.59"
+                    alt="" height="100%" width="100%">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>LEG PIECE BUCKET OFFER</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 449</b></span>
+                    <input type="radio" class="form-check-input" id="optLegPieceBucketOffer"
+                      value="LEG PIECE BUCKET OFFER" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT233.jpg?ver=30.59"
+                    alt="" height="100%" width="100%">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>PERI PERI MATCH SPECIALS</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 499.05</b></span>
+                    <input type="radio" class="form-check-input" id="optPeriPeriMatchSpecial"
+                      value="PERI PERI MATCH SPECIALS" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT170.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>CHICKEN ROLLS</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 99</b></span>
+                    <input type="radio" class="form-check-input" id="optChickenRolls" value="CHICKEN ROLLS" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT86.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>CHICKEN BUCKETS</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 299</b></span>
+                    <input type="radio" class="form-check-input" id="optChickenBuckets" value="CHICKEN BUCKETS"
+                      name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- column End -->
+          </div>
+
+          <div class="row">
+            <!-- column Start -->
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT190.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>Special BIRYANI BUCKETS</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 740</b></span>
+                    <input type="radio" class="form-check-input" id="optBiryaniBuckets" value="BIRYANI BUCKETS"
+                      name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002017.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>Smoky Grilled Biryani Combo</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 528</b></span>
+                    <input type="radio" class="form-check-input" id="optSmokyGrilledBiryaniCombo"
+                      value="Smoky Grilled Biryani Combo" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002166.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>Classic Biryani Combo</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 740</b></span>
+                    <input type="radio" class="form-check-input" id="optClassicBiryaniCombo"
+                      value="Classic Biryani Combo" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002052.jpg?ver=30.59"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <span style="color: #575757;"><strong>Popcorn Biryani Combo</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 690.48</b></span>
+                    <input type="radio" class="form-check-input" id="optPopcornBiryaniCombo"
+                      value="Popcorn Biryani Combo" name="meal">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- column End -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <button type="button" data-bs-target="#Addon" data-bs-toggle="collapse"
+          class="btn btn-danger w-100">AdOn's</button>
+      </div>
+      <div class="accordion-collapse collapse" id="Addon" data-bs-parent="#orderForm">
+        <div class="accordion-body">
+          <div class="row">
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K701.jpg?ver=31.02"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0 text-center" style="border: none;">
+                  <span style="color: #575757;"><strong>Chocolate Lava Cake</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 108.57</b></span>
+                    <input type="checkbox" class="form-check-input" id="optChocolateLavaCake"
+                      value="Chocolate Lava Cake">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00001004.jpg?ver=31.02"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0 text-center" style="border: none;">
+                  <span style="color: #575757;"><strong>Veg Zinger Box</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 313.33</b></span>
+                    <input type="checkbox" class="form-check-input" id="optVegZingerBox" value="Veg Zinger Box"
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K617.jpg?ver=31.02"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0 text-center" style="border: none;">
+                  <span style="color: #575757;"><strong>Single Chicken Roll</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 119.05</b></span>
+                    <input type="checkbox" class="form-check-input" id="optSingleChickenRoll"
+                      value="Single Chicken Roll">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-3">
+              <div class="card">
+                <div class="card-header m-0 p-0 mx-0 my-0 px-0 py-0" style="border: none;">
+                  <img
+                    src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-PR00002160.jpg?ver=31.02"
+                    alt="" height="100%" width="100%" style="border-radius: 4px;">
+                </div>
+                <div class="card-body m-0 p-0 mx-0 my-0 px-0 py-0 text-center" style="border: none;">
+                  <span style="color: #575757;"><strong>Wednesday Strips Bucket</strong></span>
+                </div>
+                <div class="card-footer" style="border: none;">
+                  <div class="d-flex justify-content-between">
+                    <span><b>&#8377; 350.48</b></span>
+                    <input type="checkbox" class="form-check-input" id="optWednesdayStripsBucket"
+                      value="Wednesday Strips Bucket">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+            <!-- Button -->
+
+            <button type="button"  data-bs-target="#bill" data-bs-toggle="modal" onclick="orderClick()"  class="btn btn-danger text-white">Place Order</button>
+            <div class="modal" id="bill">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span><strong class="text-primary">Your Bill Summary</strong></span>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <dl class="row">
+                      <dt class="col-3">Customer</dt>
+                      <dd class="col-9" id="lblName"></dd>
+
+                      <dt class="col-3">Mobile</dt>
+                      <dd class="col-9" id="lblMobile"></dd>
+
+                      <dt class="col-3">Meal Name</dt>
+                      <dd class="col-9" id="lblMeal"></dd>
+
+                      <dt class="col-3">AdOn's</dt>
+                      <dd class="col-9" id="lblAdon"></dd>
+
+                      <dt class="col-3">Total</dt>
+                      <dd class="col-9" id="lblTotal"></dd>
+                    </dl>
+                  </div>
+                  <div class="modal-footer">
+                      <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
