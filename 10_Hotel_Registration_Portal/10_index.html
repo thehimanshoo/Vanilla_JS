@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Registration Form</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/bootstrap-icons.svg"
+    />
+    <link rel="stylesheet" href="./10_style.css" />
+    <script src="./10_index.js"></script>
+  </head>
+  <body
+    onload="bodyload()"
+    class="container-fluid"
+    style="margin-bottom: 200px"
+  >
+    <section class="mt-1 mb-2">
+      <nav
+        class="navbar navbar-light bg-light"
+        style="border-radius: 5px; border: 1px solid #575757"
+      >
+        <div class="container-fluid d-flex justify-content-center">
+          <span class="navbar-brand h1 p-0 m-0 px-0 py-0 mx-0 my-0"
+            >Hotel Registration Form</span
+          >
+        </div>
+      </nav>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <form action="" onsubmit="formSubmit()">
+              <div class="form-content">
+                <div class="form-body" style="color: #575757">
+                  <div class="row mb-2">
+                    <!-- Customer Info -->
+                    <label
+                      for="form-body"
+                      class="text-center"
+                      style="
+                        background: linear-gradient(45deg, darkgreen, black);
+                        color: whitesmoke;
+                        border-radius: 5px;
+                        padding: 5px;
+                      "
+                      >Customer Info</label
+                    >
+
+                    <div class="col-6 mt-2">
+                      <span><strong>Customer Name</strong></span>
+                    </div>
+                    <div class="col-6 mt-2">
+                      <input
+                        type="text"
+                        placeholder="Enter Your Name"
+                        class="form-control"
+                        id="txtName"
+                      />
+                    </div>
+
+                    <div class="col-6 mt-2">
+                      <span><strong>Check in Date</strong></span>
+                    </div>
+                    <div class="col-6 mt-2">
+                      <input type="date" class="form-control" id="txtDate" />
+                    </div>
+
+                    <div class="col-6 mt-2">
+                      <span><strong>Total No. of Days</strong></span>
+                    </div>
+                    <div class="col-6 mt-2">
+                      <input
+                        type="number"
+                        placeholder="Total No. of Days"
+                        class="form-control"
+                        id="txtDays"
+                      />
+                    </div>
+
+                    <div class="col-6 mt-2">
+                      <span><strong>Total No. of Person</strong></span>
+                    </div>
+                    <div class="col-6 mt-2">
+                      <input
+                        type="number"
+                        placeholder="Total No. of Person"
+                        class="form-control"
+                        id="txtPerson"
+                      />
+                    </div>
+                  </div>
+                  <div class="row text-center">
+                    <!-- Select Room Type -->
+                    <label
+                      for="form-body"
+                      class="text-center"
+                      style="
+                        background: linear-gradient(45deg, darkgreen, black);
+                        color: whitesmoke;
+                        border-radius: 5px;
+                        padding: 5px;
+                      "
+                      >Select Room Type</label
+                    >
+
+                    <div class="col-6" style="border: none">
+                      <div class="card mt-2 mb-2" style="border: none">
+                        <div
+                          class="card-header p-0 m-0 px-0 py-0 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <img
+                            src="../Image/Deluxe_Room.jpg"
+                            alt=""
+                            width="120"
+                            height="90"
+                            style="border-radius: 8px; background-size: cover"
+                          />
+                        </div>
+                        <div
+                          class="card-body p-0 m-0 px-0 py-1 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <input
+                            type="radio"
+                            value="Delux Room"
+                            id="radioDelux"
+                            name="RoomType"
+                          />&nbsp;
+                          <span><strong>Delux Room</strong></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-6" style="border: none">
+                      <div class="card mt-2 mb-2" style="border: none">
+                        <div
+                          class="card-header p-0 m-0 px-0 py-0 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <img
+                            src="../Image/Suite_Room.jpg"
+                            alt=""
+                            width="120"
+                            height="90"
+                            style="border-radius: 8px; background-size: cover"
+                          />
+                        </div>
+                        <div
+                          class="card-body p-0 m-0 px-0 py-1 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <input
+                            type="radio"
+                            value="Suite Room"
+                            id="radioSuite"
+                            name="RoomType"
+                          />&nbsp;
+                          <span><strong>Suite Room</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Select Amenities -->
+                  <div class="row text-center">
+                    <label
+                      for="form-body"
+                      class="text-center"
+                      style="
+                        background: linear-gradient(45deg, darkgreen, black);
+                        color: whitesmoke;
+                        border-radius: 5px;
+                        padding: 5px;
+                      "
+                      >Select Amenities</label
+                    >
+
+                    <div class="col-6" style="border: none">
+                      <div class="card mt-2 mb-2" style="border: none">
+                        <div
+                          class="card-header p-0 m-0 px-0 py-0 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <img
+                            src="../Image/AC.png"
+                            alt=""
+                            width="120"
+                            height="90"
+                            style="border-radius: 8px; background-size: cover"
+                          />
+                        </div>
+                        <div
+                          class="card-body p-0 m-0 px-0 py-1 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <input
+                            type="checkbox"
+                            value="A/C"
+                            id="optAC"
+                            name="Amenities"
+                          />&nbsp;
+                          <span><strong>A/C</strong></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-6" style="border: none">
+                      <div class="card mt-2 mb-2" style="border: none">
+                        <div
+                          class="card-header p-0 m-0 px-0 py-0 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <img
+                            src="../Image/Hotel_Locker.png"
+                            alt=""
+                            width="120"
+                            height="90"
+                            style="border-radius: 8px; background-size: cover"
+                          />
+                        </div>
+                        <div
+                          class="card-body p-0 m-0 px-0 py-1 mx-0 my-0"
+                          style="border: none; background-color: transparent"
+                        >
+                          <input
+                            type="checkbox"
+                            value="Locker"
+                            id="optLocker"
+                            name="Amenities"
+                          />&nbsp;
+                          <span><strong>Locker</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-footer">
+                  <div class="row">
+                    <label
+                      for="form-footer"
+                      class="text-center"
+                      style="
+                        background: linear-gradient(45deg, darkgreen, black);
+                        color: whitesmoke;
+                        border-radius: 5px;
+                        padding: 5px;
+                      "
+                      >Advance Amount</label
+                    >
+                    <div class="col text-center mt-2">
+                      <span><strong>Advance Amount</strong></span
+                      >&nbsp;&nbsp;
+                      <input
+                        type="number"
+                        placeholder="Advance amount"
+                        onkeyup="validateAmount()"
+                        id="txtAdv"
+                      /><br />
+                      <br />
+                      <small id="msgAdvance" class="text-danger"></small>
+                      <button
+                        id="registerButton"
+                        type="button"
+                        data-bs-target="#billSummary"
+                        data-bs-toggle="modal"
+                        onclick="registerSubmit()"
+                        class="text-center px-3 py-1"
+                        style="
+                          background-color: blue;
+                          color: whitesmoke;
+                          border: none;
+                          border-radius: 4px;
+                        "
+                      >
+                        <small>Register</small>
+                      </button>
+                    </div>
+
+                    <!-- Important Notes -->
+                    <div class="text-center mt-4">
+                      <small
+                        ><b class="text-primary">Note :-</b> more than 2 people,
+                        extra cost <b>&#8377;1000</b> for each on total.</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <!-- Bill Summary Modal -->
+            <section>
+              <div class="modal" id="billSummary">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header" style="border: 1px solid black">
+                      <span
+                        class="text-primary h5 d-flex flex-row justify-content-center"
+                        aria-label="Close"
+                        ><strong>Bill Summary</strong></span
+                      >
+                      <button type="button" data-bs-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body py-0 my-0 mt-2">
+                      <dl class="row">
+                        <dt class="col-4">Customer Name</dt>
+                        <dd class="col-8" id="optCustomerName"></dd>
+
+                        <dt class="col-4">Check In Date</dt>
+                        <dd class="col-8" id="optCheckInDate"></dd>
+
+                        <dt class="col-4">Total Days</dt>
+                        <dd class="col-8" id="optTotalDays"></dd>
+
+                        <dt class="col-4">Total Person</dt>
+                        <dd class="col-8" id="optTotalPerson"></dd>
+
+                        <dt class="col-4">Room Type</dt>
+                        <dd class="col-8" id="optRoomType"></dd>
+
+                        <dt class="col-4">Amenities</dt>
+                        <dd class="col-8" id="optAmenities"></dd>
+
+                        <dt class="col-4">Extra People Cost</dt>
+                        <dd class="col-8" id="optExtraCost"></dd>
+
+                        <dt class="col-4">Total Amount</dt>
+                        <dd class="col-8">
+                          <strong class="text-primary" id="optTotal"
+                            >&#8377;</strong
+                          >
+                        </dd>
+
+                        <dt class="col-4">Advance Amount</dt>
+                        <dd class="col-8">
+                          <strong class="text-success" id="optAdvance"
+                            >&#8377;</strong
+                          >
+                        </dd>
+
+                        <dt class="col-4">Balance Amount</dt>
+                        <dd class="col-8">
+                          <strong class="text-danger" id="optBalanceAmount"
+                            >&#8377;</strong
+                          >
+                        </dd>
+                      </dl>
+                    </div>
+                    <div
+                      class="modal-footer d-flex justify-content-center m-0 mx-0 p-0 px-0 py-0"
+                      style="border: none"
+                    >
+                      <button
+                        class="btn btn-primary py-0 mb-2"
+                        data-bs-dismiss="modal"
+                      >
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
