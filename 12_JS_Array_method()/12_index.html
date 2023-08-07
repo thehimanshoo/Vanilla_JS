@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Array</title>
+  </head>
+
+  <script>
+    /*
+        2. Adding new Elements into Array :-
+
+        i.   push()    :- Adds a new item(s) as last item.
+        ii.  unshift() :- Adds a new item(s) as first item.
+        iii. splice()  :- Adds a new item(s) at specified position.
+    
+    */
+
+    // 1.  Example of push() method :-
+    var data = ["Monday", "Tuesday", "Thursday", "Friday"];
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("1. Example of push() method :- ");
+    document.write(`<br>`);
+
+    var result = data.push("Saturday");
+    document.write(data);
+
+    // 2.  Example of unshift() method :-
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("2. Example of unshift() method :- ");
+    document.write(`<br>`);
+
+    data.unshift("Sunday");
+    document.write(data);
+
+    // 3.  Example of splice() method :-
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("3. Example of splice() method :- ");
+    document.write(`<br>`);
+
+    data.splice(3, 0, "Wednesday");
+    document.write(data);
+
+    /*
+        3. Remove Elements from Array :-
+
+        i.   pop()    :- Remove the last item.
+        ii.  shift()  :- Remove the first item.
+        iii. splice() :- Remove specified items.
+    
+    */
+
+    // 4.  Example of pop() method :-
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("4. Example of pop() method :- ");
+    document.write(`<br>`);
+
+    data.pop();
+    document.write(data);
+
+    // 5.  Example of shift() method :-
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("5. Example of shift() method :- ");
+    document.write(`<br>`);
+
+    data.shift();
+    document.write(data);
+
+    // 6.  Example of splice() method :-
+    document.write(`<br>`);
+    document.write(`<br>`);
+    document.write("6. Example of splice() method :- ");
+    document.write(`<br>`);
+
+    data.splice(2,1);
+    document.write(data);
+
+  </script>
+
+  <body></body>
+</html>
