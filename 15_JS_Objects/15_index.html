@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Object</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules//bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules//bootstrap//dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules//bootstrap-icons/bootstrap-icons.svg"
+    />
+    <script src="./15_index.js"></script>
+
+    <style>
+
+        .card-header{
+            background: linear-gradient(45deg, green, black);
+            color: white;
+        }
+    </style>
+  </head>
+  <body class="container-fluid">
+    <div class="container mt-2">
+      <h2 class="text-primary"><strong>API Fetch</strong></h2>
+
+      <button class="btn btn-primary" onclick="fetchClick()">Fetch</button>
+
+      <div class="wrapper mt-3">
+        <table class="table table-hover">
+          <thead
+            style="
+              background: linear-gradient(45deg, green, black);
+              color: whitesmoke;">
+            <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Gender</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Each row data, showing on card -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="card text-center">
+                    <div class="card-item">
+                        <div class="card-header">
+                            <h4>Details</h4>
+                        </div>
+                        <div class="card-body" style="background-color: #dee2e6;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>ID :</td>
+                                        <td>First_Name :</td>
+                                        <td>Last_Name :</td>
+                                        <td>Email :</td>
+                                        <td>Gender :</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer p-0 py-1 px-0 m-0 mx-0 my-0" style="background-color: #adb5bd;">
+                            <button class="px-2 p-0 py-0 m-0 mx-0 my-0" style="border-radius: 4px; background: linear-gradient(45deg, green, black); color: whitesmoke;"><strong>OK</strong></button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/cjs/popper.js"></script>
+  </body>
+</html>
