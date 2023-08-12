@@ -120,3 +120,14 @@ document.write("=> for(in) Iterator, Example :- ");
      document.write(`<br>`);
      var result = components[3].slice(0,3);
      document.write(result);
+
+
+     var Arr = ["Nike", "Joggar", "Campus", "Adidas", "Gucci", "WoodLand"];
+        /*
+            The first parameter to splice() is the index at which you want to insert the element, 
+            the second parameter is the number of elements to remove (in this case, 0), and 
+            the rest of the parameters are the elements you want to insert.
+        */
+
+        Arr.splice(1, 0, "Panasonic", "HP", "Dell");
+        document.write(Arr);
