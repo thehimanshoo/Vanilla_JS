@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Nasa API</title>
+    <link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap-reboot.min.css">
+    <script src="./17_index.js"></script>
+
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+            font-weight: 400;
+        };
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div id="container">
+        <button onclick="modeClick()" id="mode" class="btn btn-dark text-white mt-2">
+            <small>Dark/light &nbsp;Mode</small>
+        </button>
+
+        <div class="d-flex flex-wrap mt-3 text-center justify-content-center">
+            <button onclick="LoadClick()" class="btn btn-primary" style="margin-right: 10px;">Load Image</button>
+            <h2>NASA Mars Rover Image</h2>
+        </div>
+
+        <div class="d-flex flex-wrap mt-4" id="cardWrapper">
+
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/cjs/popper.js"></script>
+</body>
+</html>
