@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NasaAPI</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/bootstrap-icons.svg">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./16_index.js"></script>
+</head>
+<body class="container-fluid">
+    
+    <div class="container mt-2">
+        <div class=" d-flex">
+            <button onclick="loadClick()" class="btn btn-primary m-0 mx-2 my-0 p-0 px-2 py-0">Load</button>
+            <h2><strong>NASA Mars Rover Photos</strong></h2>
+        </div>
+
+        <!-- Showing the data in Tabular form -->
+
+        <div class="wrapper mt-3">
+            <table class="table table-hover">
+                <thead style="background: linear-gradient(180deg, #6c757d, black); color: whitesmoke;">
+                    <tr>
+                        <th>Photo Id</th>
+                        <th>Camera Name</th>
+                        <th>Preview</th>
+                        <th>Rover Name</th>
+                        <th>Total Photos</th>
+                    </tr>
+                </thead>
+                <tbody style="background: linear-gradient(45deg, #ced4da, #adb5bd);" id="tableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Displaying the same data in Card-form -->
+
+        <!-- <div class="card_wrapper mt-3">
+            <div class="card" id="card">
+                <div class="card-header" id="header">
+                        
+                </div>
+                <div class="card-body" id="body">
+
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+</body>
+</html>
