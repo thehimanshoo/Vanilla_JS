@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- BootsTrap CDN link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <script src="./19_index.js"></script>
+    <title>Shopping App</title>
+
+    <style>
+      .dark-mode{
+        background-color: black;
+        color: white;
+        font-weight: 400;
+      };
+    </style>
+  </head>
+  
+  <body class="container-fluid" onload="bodyLoad()">
+    <!-- Header Section -->
+    <header class="bg-danger text-white text-center p-2">
+      <button onclick="modeChange()" class="d-flex bg-dark text-white">Light/Dark</button>
+
+      <h1><span class="bi bi-cart4
+        
+         "></span> Shopping</h1>
+    </header>
+
+    <!-- Category section -->
+    <section class="mt-3 row">
+      <nav class="col-2">
+        <div>
+          <label class="form-label" for="">Select Category</label>
+
+          <div>
+            <select onchange="categoryChange()" class="form-select" name="" id="lstCategories">
+              
+            </select>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Section -->
+      <main class="col-8 d-flex flex-wrap overflow-auto" style="height: 600px;">
+        
+      </main>
+
+      <!-- Article Section -->
+      <article class="col-2">
+        <button  onClick="showCart()" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#cart">
+          <span class="bi bi-cart"></span> [<span id="lblCount"></span>] Your Cart
+        </button>
+
+        <div class="fade modal" id="cart">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background: linear-gradient(45deg, black, #89CFF0); color: white; text-align: center;">
+                <h2 class="justify-content-center align-items-center">Your Cart Items</h2>
+                <button class="fade btn-close" data-bs-dismiss="modal" style="color: white;"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-hover">
+                  <div class="table-head">
+                    <tr>
+                      <th>Title</th>
+                      <th>Price</th>
+                      <th>Preview</th>
+                    </tr>
+                  </div>
+                  <div class="tbody">
+                    
+                  </div>
+                </table>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-success" data-bs-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+</html>
