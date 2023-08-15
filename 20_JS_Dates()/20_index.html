@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>JS Dates</title>
+    <script src="./20_index.js"></script>
+
+    <style>
+      .dark-color {
+        background-color: black;
+        color: white;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body onload="bodyload()" class="container-fluid">
+    <header class="bg-danger p-3 text-white d-flex justify-content-between">
+      <div class="d-flex justify-content-between">
+        <button
+          onclick="backgroundChanger()"
+          class="bg-dark text-white fw-bold"
+          style="height: 35px"
+        >
+          Light/Dark</button
+        >&nbsp; &nbsp;
+        <h2 class="fw-bold"><span class="bi bi-cart4"></span> Shopper</h2>
+      </div>
+
+      <div>
+        <span id="msg"></span>
+      </div>
+
+      <div>
+        <span>
+          <i class="bi bi-calendar-date h2"></i>
+          <span class="h5" id="lblDate"></span>
+        </span>
+        <span>
+          <i class="bi bi-clock-fill h2"></i>
+          <span class="h5" id="lblTime"></span>
+        </span>
+      </div>
+    </header>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
