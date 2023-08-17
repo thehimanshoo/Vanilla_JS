@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Document</title>
+
+    <script>
+
+        const submitClick = () => {
+            // alert(document.getElementById("txtDate").value);
+            var WeekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var Months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",  "Sept", "Oct", "Nov", "Dec"];
+
+            var selectedDay = document.getElementById("txtDate").value;
+            var date = new Date(selectedDay);
+            var day = date.getDay();
+            var month = date.getMonth();
+            var year = date.getFullYear();
+            var time = new Date().toLocaleTimeString();
+
+            document.getElementById("lblDay").innerHTML = WeekDays[day];
+            document.getElementById("lblMonth").innerHTML = Months[month];
+            document.getElementById("lblYear").innerHTML = year;
+            document.getElementById("lblTime").innerHTML = time;
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    
+
+    <header class="bg bg-danger text-white fw-bold text-center p-2">
+        <h2>JavaScript Date</h2>
+    </header>
+
+    <section class="mt-4">
+        Departure Details :
+        <input type="date" id="txtDate">&nbsp; 
+        <button onclick="submitClick()">Submit</button>
+
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="#" class="fw-bold h3 mb-4">Flight Departure Details</label>
+                    <table class="table table-hover">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th>Day</th>
+                                <th>Month</th>
+                                <th>Year</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="lblDay"></td>
+                                <td id="lblMonth"></td>
+                                <td id="lblYear"></td>
+                                <td id="lblTime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
