@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>JavaScript Operators</title>
+
+    <style>
+        .box{
+            padding: 10px 25px;
+            border: 1px solid black;
+            box-shadow: 0 0 10px black;
+            /* border-bottom: 2px solid black; */
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <header class="bg-danger text-white text-center p-3">
+        <h2><span class="bi bi-cart4"></span> Shopping App</h2>
+    </header>
+    
+    <div class="box mt-4">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header fw-bold text-center p-2" style="background: linear-gradient(45deg, aqua, grey);">
+                        <span id="lblTitle"></span>
+                    </div>
+                    <div class="card-body bg-dark-subtle">
+                        <img id="lblImage">
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary" onclick="PrevClick()">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-primary" onclick="NextClick()">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header text-center fw-bold p-2" style="background: linear-gradient(45deg, aqua, grey);">
+                        <span>Additional Details</span>
+                    </div>
+                    <div class="card-body bg-dark-subtle">
+                        <dl>
+                            <dt>Category</dt>
+                            <dd id="lblCategory"></dd>
+                            <dt>Price</dt>
+                            <dd id="lblPrice"></dd>
+                            <dt>Rating</dt>
+                            <span class="bi bi-star-fill d-flex flex-wrap">
+                                &nbsp;<dd id="lblRating" style="margin-top: -3px;"></dd>
+                            </span>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header fw-bold text-center p-2" style="background: linear-gradient(45deg, aqua, grey);">
+                        <span>Description</span>
+                    </div>
+                    <div class="card-body bg-dark-subtle">
+                        <textarea id="lblDescription" cols="29" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./22_index.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules//bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
