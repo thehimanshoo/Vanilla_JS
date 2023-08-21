@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Forward Jumping Example</title>
+</head>
+<body class="container-fluid">
+    
+    <section name="" id="" class="mt-4">
+        <legend class="fw-bold">JS Forward Jump Example</legend>
+        <div class="container" onload="bodyload()">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-header text-center" style="background: linear-gradient(45deg, red, black); color: white;">
+                            <h4>Payment Details</h4>
+                        </div>
+                        <div class="card-body" style="background-color: lightgrey;">
+                            <dl>
+                                <dt>Card Number</dt>
+                                <dd>
+                                    <input type="text" onkeyup="chkCardNum()" id="txtNumber" class="form-control">
+                                    <small id="lblCardNumber"></small>
+                                </dd>
+                    
+                                <dt>Expiry Date</dt>
+                                <dd>
+                                    <input type="text" disabled onkeyup="chkCardExpiry()" id="txtExp" class="form-control">
+                                    <small id="lblCardExpiry"></small>
+                                </dd>
+                    
+                                <dt>CVV</dt>
+                                <dd>
+                                    <input type="text" disabled onkeyup="chkCardCVV()" id="txtCVV" class="form-control">
+                                    <small id="lblCardCVV"></small>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="card-footer text-center" style="background-color: lightgrey;">
+                            <button class="bg-primary text-white" disabled onclick="verifyCard()" id="btnSubmit">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="modal" id="modalBox" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title">
+                                        <span>Card Details</span>
+                                    </div>
+                                    <button class="collapse btn-close" data-bs-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body" id="modalBody">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./25_script.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
