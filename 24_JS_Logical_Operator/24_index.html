@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/bootstrap-icons.svg">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body class="container-fluid">
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header text-center" style="background: linear-gradient(45deg, red, black); color: white;">
+                        <h3>JS Operator</h3>
+                    </div>
+                    <div class="card-body">
+                        <input onclick="changeStock()" id="optStock" type="checkbox">&nbsp; <b><span id="lblStock">Out of Stock</span></b>
+
+                        <button onclick="ButtonClick()" id="button" class="mt-2">Show</button>
+
+                        <div id="pic" style="display: none;">
+                            <img id="image" class="mt-1" src="../Image/Suite_Room.jpg" alt="" width="130" height="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 d-flex flex-row">
+                <div class="card">
+                    <div class="card-header" style="background: linear-gradient(45deg, green, black); color: white;">
+                        <h5>Login Authenticator</h5>
+                    </div>
+                    <div class="card-body" style="background-color: lightgrey;">
+                        <div class="d-flex flex-column">
+                            <span><b>Username</b></span>
+                            <input id="username" type="email" row="2" col="10">
+        
+                            <span><b>Password</b></span>
+                            <input id="password" type="password" row="2" col="10">
+
+                            <small id="authMsg"></small>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center" style="background-color: lightgrey;">
+                        <button onclick="loginClick()" class="btn btn-primary text-white text-center py-1">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./24_script.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
