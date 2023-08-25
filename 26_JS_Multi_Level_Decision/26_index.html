@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Multi-Level Decisions</title>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <section>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-header" style="background: linear-gradient(45deg, red, black); color: white;">
+                            <h4>JS Multi Level Decision</h4>
+                        </div>
+                        <div class="card-body" style="background-color: lightgray;">
+                            <form action="" class="d-flex flex-column">
+                                <label for="">Username</label>
+                                <input type="text" id="txtUsername">
+
+                                <label for="">Password</label>
+                                <input type="password" id="txtPassword">
+
+                                <span id="lblMsg"></span>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center" style="background-color: lightgray;">
+                            <button class="btn btn-primary text-white" onclick="LoginClick()">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="./26_Script.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
