@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Amazon Login Page</title>
+
+    <style>
+        .dark-color{
+            background-color: black;
+            color: white;
+            font-weight: 300;
+        };
+
+        .lblSignIn{
+            margin-bottom: 10px !important;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-center text-white">
+        <button class="btn btn-dark text-white" onclick="ChangeTheme()" style="position: absolute; left: 15px;">Light/Dark</button>
+        <div class="navbar-brand">Amazon Login Form</div>
+    </nav>
+
+    <section class="mt-4">
+        <div class="container p-4" style="border: 1px solid #a6a6a6; width: 32%; border-radius: 8px;box-shadow: 0 1px 0 rgba(255,255,255,.5),0 1px 0 rgba(0,0,0,.07) inset;">
+            <h1 class="lblSignIn">Sign in </h1>
+
+            <div id="usernameWrapper">
+                <small for=""><b>Email or mobile phone number</b></small><br>
+                <input class="form-control" type="text" id="txtUsername"><br>
+                <small id="usernameErr"></small>
+
+                <button class="btn btn-warning form-control" onclick="verifyUsername()">Continue</button>
+            </div>
+
+            <div id="passwordWrapper" style="display: none;">
+                <small for=""><b>Password</b></small><br>
+                <input class="form-control" type="password" id="txtPassword"><br>
+                <small id="pwdErr"></small>
+
+                <button class="btn btn-primary form-control" onclick="loginClick()">Login</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./27_Script.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
