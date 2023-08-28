@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Swich Case</title>
+    
+    <style>
+        .dark-color{
+            background: black;
+            color: white;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-center text-white">
+        <button class="btn btn-dark text-white" onclick="ChangeTheme()" style="position: absolute; left: 15px;">Light/Dark</button>
+        <div class="navbar-brand">JS Switch Case</div>
+    </nav>
+
+    <section class="mt-4">
+        <div class="row">
+            <div class="col">
+                <label for=""><b>Choose a Category for Product :-&nbsp; </b></label>
+                <select name="" id="lblCategory" onchange="categoryChange()">
+                    
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for=""><b>Select  Products :- &nbsp;</b></label>
+                <select name="" id="lblProduct">
+                    
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <script src="./28_Script.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
