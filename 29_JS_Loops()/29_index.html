@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Loops</title>
+
+    <style>
+        .dark-color{
+            background-color: black;
+            color: wheat;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-center text-white">
+        <button class="btn btn-dark text-white" onclick="ChangeTheme()" style="position: absolute; left: 15px;">Light/Dark</button>
+        <div class="navbar-brand">JS Loops</div>
+    </nav>
+    
+    <section class="mt-4">
+       <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for=""><strong>Select Category &nbsp;</strong></label>
+                    <select name="" id="lblCategory" onchange="changeCategory()">
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <label for=""><strong>Select Product &nbsp;</strong></label>
+                    <select name="" id="lblProduct">
+
+                    </select>
+                </div>
+            </div>
+       </div>
+    </section>
+
+    <div class="row mt-5 d-flex justify-content-center">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header text-center" style="background: linear-gradient(45deg, red, black); color:white; text-shadow: 0 0 2px black; font-weight: ;">
+                    <h5>ATM PIN Validator</h5>
+                </div>
+                <div class="card-body" style="background-color: lightgrey;">
+                    <dl>
+                        <dt>Enter your PIN &nbsp;</dt>
+                        <dd class="mt-2">
+                            <input type="text" id="txtPIN" onblur="chkPIN()" class="form-control">
+                            <small style="position: absolute; bottom: 58px;" id="errMsg"></small>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-center" style="background-color: #F8F8F8;">
+                    <button class="btn btn-primary" id="SubmitButton" onclick="submitClick()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./29_Script.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
