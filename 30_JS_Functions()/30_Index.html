@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Functions</title>
+
+    <script>
+
+        /*
+                Parameterized function
+            
+            In Parameterized function, parameter can be passed in the function and can  be
+            print the value of the parameter by passing the value to the function while it 
+            has been called... The value shold be accordingly like parameter names & their sequence    
+        */
+
+        const demo = (name, age, country) =>{
+            document.write(`Name :- ${name} <br/> Age :- ${age} <br/> Country :- ${country}`);
+    
+        }
+        demo("JOHN", 24, "USA");
+
+
+        /*
+                Rest Parameter Example
+
+            In function "Rest Parameter" is something which can be passed with "...param_name"
+            and it is an "Array" which store all parameter value in "Array" and also it should always
+            be add in last, after adding "...param_name" no other parameter can be write, 
+            we can add it before adding "Rest Parameter" but after applying "Rest Parameter" we can't
+            add any more parameter...
+
+            the value should be combined passed in the function name while calling it.
+            which the syntax :- ["value of params"]
+        */
+
+        const Details = (title, ...RestParameter) => {
+            [name, price, status] = RestParameter;
+            document.write("<br>");
+            document.write("<br>");
+            document.write(`${title} Name : ${name} <br> Price : ${price} <br> Status : ${status}`);
+        }
+        Details("<h2><strong>JS Rest Parameter Example</strong></h2>", "SAMSUNG", 45000, "Out of Stock");
+
+
+        /*
+                    JS Nested Function / Function Closure
+
+            Closure function are something in which, 
+            i.  The value of Outer function are accessible to Inner Function.
+            ii. But, the value of Inner function are not accessible to Outer function. 
+           
+            =>  Simply Closure is a technique that allows the outer function to access the members
+                of inner function. while Inner function can emmits the values which are accessed
+                and used by outer function.
+        */
+
+        document.write("<h2>JS Nested Function / Function closure</h2>");
+
+        const Outer = () => {
+            var a  = 10;
+            const Inner = () => {
+                var b = 20;
+                var sum  = a + b;
+                return sum;
+            }
+            return Inner();
+        };
+
+        document.write(`Addition = ${Outer()}`);
+
+
+        /*
+                JS Recursion Function
+
+            Recursion function is something in which function calling itself, 
+            is known as "Recursion"...    
+        */
+
+        document.write(`<h2>JS Recursion function Example</h2>`);
+
+        function Factorial(n) {
+            if(n == 0){
+                return 1;
+            }
+            return n * Factorial(n-1);
+        };
+        document.write(`Factorial of 10 is :- ${Factorial(10)}`)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
