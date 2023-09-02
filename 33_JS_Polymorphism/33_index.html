@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./33_Script.js"></script>
+    <title>JS Polymorphism</title>
+
+    <style>
+        .dark-mode{
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+        };
+
+        @media print {
+            button {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white d-flex justify-content-center">
+        <button onclick="Toggle()" style="position: absolute; left: 10px;">Light/Dark</button>
+        <h3>Demo</h3>
+    </nav>
+
+    <h1>Main Content</h1>
+    <button onclick="window.print()" style="margin-top: 10px;">Print</button>
+    <button onclick="window.open('../Image/Suite_Room.jpg', 'Hotel Room', 'width=600, height=400')">Open</button>
+    <button onclick="window.close()">Close</button>
+
+    <section>
+        <button onclick="GetLocation()">Get Location Details</button>
+        <span style="margin-top: 20%; text-align: center;" id="locationData"></span>
+    </section>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
