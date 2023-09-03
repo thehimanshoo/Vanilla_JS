@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+
+    <script>
+        var topics = [
+            {Name : "JavaScript", Description : "It is a Client side Programming language for HTML."},
+            {Name : "CSS", Description : "It defines styles for HTML."},
+            {Name : "Bootstrap", Description : "It defines dynamic design from classname to HTML"}
+        ];
+
+        const bodyLoad = () => {
+            var str = location.search;
+            var searchWord = str.substring(str.indexOf("=")+1);
+            // console.log(searchWord);
+
+            for(var topic of topics){
+                if(topic.Name === searchWord){
+                    document.querySelector("li").innerHTML = topic.Name;
+                    document.querySelector("span").innerHTML = topic.Description;
+                }
+            }
+        }
+    </script>
+            
+</head>
+<body onload="bodyLoad()">
+    <h1>Result</h1>
+    <ul>
+        <li style="font-weight: bold; font-size: 25px;"></li>
+        <span style="font-size: 22px;"></span>
+    </ul>
+</body>
+</html>
