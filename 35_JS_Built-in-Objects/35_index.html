@@ -1,0 +1,12 @@
+<script>
+    const getGeoLoaction = () => {
+        navigator.geolocation.getCurrentPosition((position)=> {
+            document.write(`
+                Latitude  : ${position.coords.latitude} <br>
+                Longitude : ${position.coords.longitude}
+            `);
+        })
+    };
+
+    getGeoLoaction();
+</script>
