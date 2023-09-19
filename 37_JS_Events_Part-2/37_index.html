@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Events Part-2</title>
+</head>
+<body class="container-fluid">
+    
+    <!-- 
+        Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+        ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectionstart => {fot selection}
+
+     -->
+
+    <nav class="navbar navbar-brand d-flex justify-content-center" style="background-color: orangered; color: white; font-weight: bold; text-shadow: 2px 5px 5px black;">
+        <h3>JS Events (Mouse Events)</h3>
+    </nav>
+
+    <!-- ___________________Mouse Events Example_______________________ -->
+
+     <div class="mt-5 mb-5" align="center">
+        <ol>
+            <!-- onmouseover & onmouseout -->
+            <li style="font-weight: bold; font-size: 20px;">onmouseover & onmouseout</li>
+            <img id="img1" onmouseover="mouseOver()" onmouseout="mouseOut()" src="../Image/Suite_Room.jpg" alt="hotelRoom" width="300", height="300px"> <br>
+            <span id="opt1" style="font-size: 20px; font-weight: bold;"></span>
+
+            <!-- onmouseup & onmousedown -->
+            <li class="mt-5" style="font-weight: bold; font-size: 20px;">onmouseup & onmousedown</li>
+            <img id="img2" onmouseup="mouseUp()" onmousedown="mouseDown()" src="../Image/AC.png" alt="amenities" width="300", height="200px"> <br>
+            <span id="opt2" style="font-size: 20px; font-weight: bold;"></span>
+
+            <!-- onmouseenter & onmouseleave -->
+            <li class="mt-5" style="font-weight: bold; font-size: 20px;">onmouseenter & onmouseleave</li>
+            <img id="img3" onmouseenter="mouseEnter()" onmouseleave="mouseLeave()" src="../Image/RuPay.png" alt="credit card" width="250", height="150px"> <br>
+            <span id="opt3" style="font-size: 20px; font-weight: bold;"></span>
+
+            <!-- onmousemove & onmousedblclick -->
+            <li class="mt-5" style="font-weight: bold; font-size: 20px;">onmousemove & ondblclick</li>
+            <img id="img4" onmousemove="mouseMove(event)" ondblclick="dblClick()" src="../Image/KFC_Theme.png" alt="credit card" width="300px", height="300px"> <br>
+            <span id="opt4" style="font-size: 20px; font-weight: bold;"></span>
+        </ol>
+
+                <h5 class="mt-5" style="font-weight: bold; font-size: 30px; color: red;">onmousemove</h5> <br>
+                <img id="img5" onmousemove="Move(event)" src="../Image/Visa.png" alt="credit card" width="200px", height="150px"> <br>
+                <span id="opt5" style="font-size: 20px; font-weight: bold;"></span>
+     </div>
+
+    <script src="./37_Script.js"></script>
+</body>
+</html>
