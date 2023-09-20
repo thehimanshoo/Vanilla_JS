@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Events Part 3</title>
+</head>
+<body class="container-fluid" onmousemove="changePosition(event)">
+    
+<!-- 
+        Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+        ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+     -->
+
+     <!-- ___________________Mouse Events Example_______________________ -->
+     
+    <div style="height: 800px;" align="center">
+        <nav class="navbar navbar-brand d-flex justify-content-center text-white" style="text-shadow: 0 0 5px black; background: linear-gradient(45deg, red, black); font-size: 25px; font-weight: bold;">
+            JS Events Part 3
+        </nav>
+
+        <h3 class="mt-3">Move cursor to position image</h3>
+        <span id="positionMsg"></span>
+    </div>
+
+    <img src="../Image/flag.gif" id="flag" alt="flag" width="160" height="90">
+    <script src="./38_Script.js"></script>
+</body>
+</html>
