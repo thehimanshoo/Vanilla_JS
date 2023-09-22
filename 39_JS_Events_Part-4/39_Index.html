@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>JS Events Part-4</title>
+
+    <style>
+        #eye {
+            color: white;
+            margin-right: -50px;
+            background-color: transparent;
+            border: none;
+        }
+
+        ;
+    </style>
+</head>
+
+<body class="container-fluid text-center" align="center" style="background-color: black;">
+
+     <!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+-->
+
+    <nav class="navbar navbar-nav navbar-brand"
+        style="background: linear-gradient(45deg, red, black); color: white; font-weight: bold; font-size: 25px; text-shadow: 0 0 5px black;">
+        JS Events Part-4
+    </nav>
+
+    <!-- ___________________Mouse Events Example_______________________ -->
+
+    <div class="container mt-5 d-flex flex-row justify-content-between">
+        <div onmousemove="mouseMove(this.id)" id="red"
+            style="background-color: red; height: 150px; width: 150px; border-radius: 50%;"></div>
+        <div onmousemove="mouseMove(this.id)" id="green"
+            style="background-color: green; height: 150px; width: 150px; border-radius: 50%;"></div>
+        <div onmousemove="mouseMove(this.id)" id="yellow"
+            style="background-color: yellow; height: 150px; width: 150px; border-radius: 50%;"></div>
+        <div onmousemove="mouseMove(this.id)" id="blue"
+            style="background-color: blue; height: 150px; width: 150px; border-radius: 50%;"></div>
+        <div onmousemove="mouseMove(this.id)" id="white"
+            style="background-color: white; height: 150px; width: 150px; border-radius: 50%;"></div>
+    </div>
+
+    <h1 id="msg" style="margin-top: 50px; font-size: 45px; color: white; text-shadow: 0 6px 8px red;">Welcome to
+        JavaScript</h1>
+
+
+        <!-- ___________________Keyboard Events Example_______________________ -->
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <dl class="d-flex align-items-baseline">
+                    <dt class="text-white fw-bold fs-4" style="margin-right: 13px;">Username</dt>
+                    <dd><input id="username" type="text" placeholder="Enter Username"></dd>
+                </dl>
+                <dl class="d-flex align-items-baseline">
+                    <dt class="text-white fw-bold fs-4" style="margin-right: 13px;">Password</dt>
+                    <dd><input id="password" onkeypress="validateCaps(event)" type="password"
+                            placeholder="Enter Password">
+                        <button onclick="showPass()" id="eye" class="bi bi-eye-fill h4"></button>
+                    </dd>
+                </dl>
+                <span id="pwdMsg" class="bi bi-exclamation-triangle-fill h3 align-items-center"
+                    style="color: goldenrod; display: none;">&nbsp;&nbsp;Warning : Caps ON</span>
+            </div>
+        </div>
+    </div>
+    <script src="./39_Script.js"></script>
+</body>
+
+</html>
