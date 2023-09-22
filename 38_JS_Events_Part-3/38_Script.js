@@ -46,6 +46,35 @@
         - oncontextmenu  => {fot right click}
         - onselectstart => {fot selection}
 
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
 */
 
 const changePosition = (e) => {

@@ -69,6 +69,12 @@
          - onreset
 
 
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
 */
 
 const mouseMove = (id) => {

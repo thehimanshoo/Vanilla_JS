@@ -10,8 +10,9 @@
 </head>
 <body class="container-fluid" style="background-color: black; color: white;">
     
-     <!-- 
-        Events are classified into various groups, such as:-
+     <!--
+
+    Events are classified into various groups, such as:-
 
         1.  Mouse Events
         2.  Keyboard Events
@@ -47,16 +48,44 @@
         - onkeypress
 
 
-        ___________ CLIPBOARD EVENTS _______________
+         ___________ CLIPBOARD EVENTS _______________
 
         - oncut
         - oncopy
         - onpaste
         - oncontextmenu  => {fot right click}
-        - onselectionstart => {fot selection}
+        - onselectstart => {fot selection}
 
-     -->
 
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+-->
      <!-- ___________________Mouse Events Example_______________________ -->
 
     <button id="btnInsert" onclick="Database(this)" class="btn btn-primary mt-3" style="padding: 10px 25px; font-size: 25px; margin-left: 20px;">Insert</button>
