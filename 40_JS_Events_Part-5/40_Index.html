@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Events Part 5</title>
+</head>
+<body class="container-fluid">
+    
+    <!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+-->
+
+     <nav class="navbar navbar-nav navbar-brand" style="background: linear-gradient(45deg, red, black); color: white; 
+     font-weight: bold; text-align: center; text-shadow: 0 5px 10px black; font-size: 28px;">
+        JS Clipboard Events
+     </nav>
+
+     <!-- ___________________Clipboard Events Example_______________________ -->
+
+     <h3 class="mt-3 bg-dark text-white p-2">cut, copy & paste Notification</h1>
+
+     <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+
+                <dl>
+                    <dt>Textarea</dt>
+                    <dd>
+                        <textarea oncut="Cut()" oncopy="Copy()" onpaste="Paste()" cols="40" rows="7"></textarea>
+                    </dd>
+
+                    <dd>
+                        <span id="status"></span>
+                    </dd>
+                </dl>
+
+            </div>
+        </div>
+     </div>
+
+    <script src="./40_Script.js"></script>
+</body>
+</html>
