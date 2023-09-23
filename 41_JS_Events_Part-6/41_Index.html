@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Events Part 6</title>
+</head>
+
+<!-- instead of writing the function directly to script.js without defing the function 
+     here on the body, we can also write like this, after providing directly "return false" with the eventName, not 
+     need to write anything in "script.js", which has previously written to show the other type writing logic -->
+
+<body onload="bodyload()" class="container-fluid" oncontextmenu="return false" oncut="return false"
+    oncopy="return false" onpaste="return false" onselect="return false">
+
+    <!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+
+-->
+
+    <nav class="navbar navbar-nav navbar-brand" style="background: linear-gradient(45deg, red, black); color: white; 
+     font-weight: bold; text-align: center; text-shadow: 0 5px 10px black; font-size: 28px;">
+        JS Clipboard Events
+    </nav>
+
+    <!-- ___________________Clipboard Events Example_______________________ -->
+
+    <h3 class="mt-3 bg-dark text-white p-2">This is a secured. You can't right click, Cut, Copy, Paste & Select.</h1>
+
+        <dl>
+            <dt>Textarea</dt>
+            <dd>
+                <textarea cols="45" rows="7"></textarea>
+            </dd>
+        </dl>
+
+
+
+        <!-- ___________ ELEMENT STATE EVENTS Example_______________ -->
+
+        <dl>
+            <dt>Username</dt>
+            <dd><input type="text" onfocus="ShowMsg()" onblur="HideMsg()" placeholder="Enter Username"></dd>
+            <dd><small id="usrMsg"></small></dd>
+
+            <dt>Password</dt>
+            <dd><input type="password" onfocus="ShowPass()" onblur="HidePass()" placeholder="Enter Password"></dd>
+            <dd class="mt-0"><small class="mt-0" id="pwdMsg"></small></dd>
+        </dl>
+
+        <!-- Dynamically focus to Password -->
+        <h3 class="mt-5 text-danger">Dynamically focus to next field, if condition satisfy</h3>
+        <dl>
+            <dt>Username</dt>
+            <dd><input type="text" onkeyup="verifyName()" id="username" placeholder="Enter Username"></dd>
+            <dd><small id="nameMsg"></small></dd>
+
+            <dt>Password</dt>
+            <dd><input type="password" onkeyup="chkPassword()" id="chkPassword" placeholder="Enter Password"></dd>
+            <dd"><small id="passMsg"></small></dd>
+        </dl>
+
+
+        <!-- ___________ TIMER EVENTS Example_______________ -->
+
+        <div align="center">
+            <h1 id="timerEvent" class="mt-5"></h1>
+            <button onclick="ClearClick()">Clear 2</button>
+        </div>
+
+        <script src="./41_Script.js"></script>
+</body>
+
+</html>
