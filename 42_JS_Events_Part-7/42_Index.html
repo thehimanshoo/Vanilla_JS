@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>JS Timer Events</title>
+
+    <style>
+        body{
+            margin-bottom: 200px !important;
+        }
+    </style>
+</head>
+
+<body onload="bodyload()" class="container-fluid" align="center">
+
+<!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+-->
+
+
+
+<!-- ___________________Timer Events Example_______________________ -->
+
+    <nav class="navbar navbar-nav navbar-brand" style="background: linear-gradient(45deg, red, black); color: white; 
+        text-shadow: 0 5px 8px black; font-weight: bold; font-size: 28px;">
+        JS Timer Events
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body" style="background-color: beige;">
+                        <h1 id="watch" class="watch d-flex justify-content-center"></h1>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button onclick="PlayClick()" class="btn btn-danger" style="width: 40px; height: auto;"><span
+                                class="bi bi-play-btn-fill"></span></button>
+                        <button onclick="PauseClick()" class="btn btn-success"><span class="bi-pause-btn-fill"
+                                style="width: 40px; height: auto;"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header text-center" style="background-color: rgb(88, 122, 122); color: white;">
+                        <h4 id="productTitle"></h4>
+                    </div>
+                    <div class="card-body" style="background-color: rgb(214, 212, 212);">
+                        <div id="product"></div>
+
+                        <div class="detailsHolder mt-3">
+                            <h5>Price : <span class="text-primary fw-bold">&#8377</span>
+                                <span id="price" class="text-primary fw-bold">&#8377</span>
+                            </h5>
+                            <h5>Rate : <span id="rate" style="font-weight: bold;"></span></h5>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center" style="background-color: rgba(212, 210, 210, 0.628);">
+                        <button onclick="PlaySlider()" class="btn btn-danger"><span class="bi bi-play-btn-fill"></span></button>
+                        <button onclick="StopSlider()" class="btn btn-success"><span class="bi-pause-btn-fill"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./42_Script.js"></script>
+</body>
+
+</html>
