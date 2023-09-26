@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>JS Form Events</title>
+</head>
+
+<body class="container-fluid">
+    <!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+-->
+
+
+
+    <!-- ___________________Form Events Example_______________________ -->
+    <nav class="navbar navbar-nav navbar-brand" style="background: linear-gradient(45deg, red, black); color: white; 
+        text-shadow: 0 5px 8px black; font-weight: bold; font-size: 28px;">
+        JS Form Events
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <form onsubmit="submitClick(event)" class="form-control" action="">
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input id="username" name="txtName" type="text" placeholder="Enter Username"></dd>
+                        <dt>Password</dt>
+                        <dd><input id="password" name="txtPass" type="password" placeholder="Enter Password"></dd>
+
+                        <button id="txtSubmit" value="submit">Submit</button>
+                        <button id="txtCancel" value="cancel">Cancel</button>
+                    </dl>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submiting form dynamically after change in option -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4"  style="border: 1px solid lightgrey;">
+                <h4 class="text-danger">Submiting form dynamically after change in option</h4>
+                <form action="" id="dynamicForm">
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input name="username" id="Uname" type="text" placeholder="Enter Username"></dd>
+                        <dt>Password</dt>
+                        <dd><input name="password" id="Pass" type="password" placeholder="Enter Password"></dd>
+                        <dt>City</dt>
+                        <dd>
+                            <select name="city" id="city" onchange="submitForm()" name="" id="">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Kolkata">Kolkata</option>
+                            </select>
+                        </dd>
+                    </dl>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./43_Script.js"></script>
+</body>
+
+</html>
