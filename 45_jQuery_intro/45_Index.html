@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>jQuery Intro</title>
+
+    <style>
+        .dark-mode{
+            background-color: white !important;
+            color: black !important;
+        }
+    </style>
+</head>
+
+<body class="container-fluid" style="background-color: black; color: white;">
+
+    <!-- 
+
+                                       jQuery DOM Methods
+                                    -------------------------
+
+                text()          :  innerText
+                html()          :  innerHTML
+                val()           :  Value
+                attr()          :  Attribute
+                prop()          :  Property
+                css()           :  Styles
+                append()        :  Adding Element [After/Right]
+                appendTo()      :  Adding to specific Element
+                prepend()       :  Adding Element [Before/Left]
+                before()        :  Adding above
+                after()         :  Adding below
+                each()          :  Iterator (used for both properties and values)
+
+    -->
+
+    <nav class="navbar navbar-nav text-white align-items-center" style="background: linear-gradient(45deg, red , black);">
+        <div style="position: absolute; left: 20px;">
+           <button onclick="modeChange()" class="text-white bg-dark">Light/Dark</button>
+        </div>
+        <h3 style="text-shadow: 0 5px 10px black;">jQuery Introduction</h3>
+    </nav>
+
+    <h2 align="center" class="mt-5">Examples of jQuery Selectors</h2>
+
+    <div class="mt-5" style="border: 1px solid red;" align="center">
+        <h1></h1>
+        <p id="msg"></p>
+        <div class="lblMsg"></div>
+    </div>
+
+<!-- ____________________________Examples of jQuery DOM methods____________________________ -->
+
+    <h2 align="center" class="mt-5">Examples of jQuery DOM methods</h2>
+
+    <div class="mt-5" style="border: 1px solid green;" align="center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="background-color: black; color: white;">
+                        <div class="card-header"></div>
+                        <div class="card-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    <!-- jQuery Form -->
+
+    <h2 align="center" class="mt-5">jQuery Form Example</h2>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col">
+                <form action="">
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input id="username" type="text" placeholder="Enter Username"></dd>
+                        <dt>Password</dt>
+                        <dd><input id="password" type="password" placeholder="Enter Password"></dd>
+                    </dl>
+                    <span id="txtName"></span>
+                    <span id="txtPass"></span>
+                </form>
+                <button class="mt-3">Submit</button>
+            </div>
+        </div>
+    </div>     
+
+    
+    <!-- jQuery Form (Form submit on selecting city) -->
+
+    <h3 align="center">jQuery form submit on selecting city</h3>
+    <div class="container mt-5" align="center" style="margin-bottom: 150px;">
+        <div class="row">
+            <div class="col">
+                Select your city &nbsp;
+                <select name="" id="">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </div>
+            <span class="mt-3" id="lblCity"></span>
+        </div>
+    </div>
+    
+    <script src="./45_Script.js"></script>
+</body>
+
+</html>
