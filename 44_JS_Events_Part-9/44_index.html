@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Touch Events</title>
+</head>
+
+<body class="container-fluid" style="position: fixed; top: 0; left: 0; ">
+
+    <!--
+
+    Events are classified into various groups, such as:-
+
+        1.  Mouse Events
+        2.  Keyboard Events
+        3.  Button Events
+        4.  Clipboard Events
+        5.  Touch Events
+        6.  Timer Events
+        7.  Elements State Events
+        8.  Miscellaneous Events
+        9.  Form Events
+        10. Window Events
+        11. Document and DOM Events
+        12. Custom Events etc...
+
+
+        ___________ MOUSE EVENTS _______________
+
+        - onclick
+        - ondblclick
+        - onmouseover
+        - onmouseout
+        - onmousedown
+        - onmouseup
+        - onmousemove
+        - onmouseenter
+        - onmouseleave
+
+
+        ___________ KEYBOARD EVENTS _______________
+
+        - onkeydown
+        - onkeyup
+        - onkeypress
+
+
+         ___________ CLIPBOARD EVENTS _______________
+
+        - oncut
+        - oncopy
+        - onpaste
+        - oncontextmenu  => {fot right click}
+        - onselectstart => {fot selection}
+
+
+         ___________ ELEMENT STATE EVENTS _______________
+
+        - onfocus       : When element gets focus
+        - onblur        : When element lost focus
+        - onselect      : When user Selects
+        - onchange      : When value changes
+
+
+        ___________ TIMER EVENTS _______________
+
+        - setInterval()
+        - clearInterval()
+        - setTimeout()
+        - clearTimeout()
+
+
+         ___________ FORM EVENTS _______________
+
+         - onsubmit
+         - onreset
+
+
+          ___________ TOUCH EVENTS _______________
+
+         - ontouchstart
+         - ontouchend
+         - ontouchmove
+
+-->
+
+
+    <!-- ___________________Touch Events Example_______________________ -->
+
+
+    <!-- ___ontouchmove Example___ -->
+    <nav class="navbar navbar-nav navbar-brand" style="background: linear-gradient(45deg, red, black); color: white; 
+        text-shadow: 0 5px 8px black; font-weight: bold; font-size: 28px;">
+        JS Touch Events
+    </nav>
+
+    <h5>Touch Event Example (ontouchmove)</h5>
+    <img id="touchMove" ontouchmove="TouchMoveEvent(event)" class="mt-5" src="../Image/flag2.webp" alt="" height="150"
+        width="250">
+
+
+    <!-- ___ontouchstart Example___ -->
+
+    <div class="wrapper mt-5" align="center" style="border: 1px solid lightgrey;">
+        <h5>Touch Event Example (ontouchstart)</h5>
+        <img id="suitRoom" ontouchstart="TouchStartEvent(this.id)" class="mt-5" src="../Image/Suite_Room.jpg" alt=""
+            height="150" width="250">
+
+        <img id="locker" ontouchstart="TouchStartEvent(this.id)" class="mt-5" src="../Image/Hotel_Locker.png" alt=""
+            height="150" width="250">
+    </div>
+    <span></span>
+
+    <img src="" alt="">
+    <script src="./44_Script.js"></script>
+</body>
+
+</html>
