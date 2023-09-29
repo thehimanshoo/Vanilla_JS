@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>jQuery Eevents</title>
+
+    <script>
+        $(function() {
+            $("#detailsButton").click(function(event) {
+                $("#btnMsg").html(`
+                    X Position      : ${event.clientX} <br>
+                    Y Position      : ${event.clientY} <br>
+                    Id              : ${event.target.id} <br>
+                    Name            : ${event.target.name} <br>
+                    Value           : ${event.target.value} <br>
+                    ClassName       : ${event.target.className}
+                `);
+            });
+        });
+    </script>
+
+</head>
+
+<body class="container-fluid" style="background-color: black; color: white;">
+
+    <nav class="navbar-nav navbar-brand text-center"
+        style="background: linear-gradient(45deg, red, black); color: white; font-weight: bold; text-shadow: 0 5px 10px black;">
+        <h3>jQuery Events Examples</h3>
+    </nav>
+
+    <!-- 
+        NOTE :-  jQuery event don't have "this" as defalult event argument.
+                 jQuery event can use only "event" as default argument.
+                 In jQuery object details are also sent by using "event.target" argument
+
+                 event.clientX
+                 event.clientY
+                 event.target.value     }
+                 event.target.id        }   Object details
+                 event.target.className }
+                 event.target.name      }
+
+     -->
+
+     <div class="mt-5" align="center">
+        <button class="btn btn-danger text-white" name="Details" id="detailsButton" value="Get_Details">Get Details</button>
+        <p class="mt-4" id="btnMsg"></p>
+    </div>
+
+    <!-- <script src="./46_Script.js"></script> -->
+</body>
+
+</html>
