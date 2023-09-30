@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <title>Shopping App</title>
+
+  <style>
+    /* .light-mode{
+        background-color: white !important;
+        color: black !important;
+        font-weight: 400;
+      } */
+  </style>
+</head>
+
+<body class="container-fluid" style="background-color: black; color: white;">
+  <!-- Header Section -->
+
+  <header class="bg-danger text-white text-center p-2">
+    <button id="toggler" class="d-flex bg-dark text-white">Light/Dark</button>
+
+    <h1><span class="bi bi-cart4"></span>&nbsp;&nbsp;jQuery Shopping App</h1>
+  </header>
+
+  <!-- Category section -->
+  <section class="mt-3 row">
+    <nav class="col-2">
+      <div>
+        <label class="form-label">Select Category</label>
+
+        <div>
+          <select class="form-select" name="" id="lstCategories">
+
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="col-8 d-flex flex-wrap overflow-auto" style="height: 600px;">
+      
+    </main>
+
+    <!-- Article Section -->
+    <article class="col-2">
+      <button id="cart" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#cart">
+        <span class="bi bi-cart"></span> [<span id="lblCount"></span>] Your Cart
+      </button>
+
+      <div class="fade modal" id="cart">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header"
+              style="background: linear-gradient(45deg, black, #89CFF0); color: white; text-align: center;">
+              <h2 class="justify-content-center align-items-center">Your Cart Items</h2>
+              <button class="fade btn-close" data-bs-dismiss="modal" style="color: white;"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                  </tr>
+                </thead>
+                <tbody class="tableBody">
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <script src="./47_Script.js"></script>
+</body>
+
+</html>
