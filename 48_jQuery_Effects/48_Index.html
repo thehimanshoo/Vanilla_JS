@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>jQuery Effects</title>
+</head>
+<body class="container-fluid" style="margin-bottom: 150px; background-color: black; color: white;">
+    
+    <nav class="navbar-nav navbar-brand text-center bg-dark text-white p-2">
+        <h3>jQuery Effects</h3>
+    </nav>
+
+    <!--
+                            jQuery Effects
+                           -----------------
+
+            show()
+            hide()
+            toggle()
+            fade()
+            fadeToggle()
+            slide()
+            slideToggle()  
+            animate()
+            clearQueue()
+            delay()
+            dequeue()
+            fadeToggle()
+            fadeIn()
+            fadeOut()
+            fadeTo()
+            slideUp()
+            slideDown()
+            stop() etc...               
+
+     -->
+
+     <div class="contaier mt-5">
+
+        <!----------------------------- Section_1 ----------------------------->
+        <div class="row" align="center" style="border: 1px solid red;">
+            <div class="col">
+                <h4>show()</h4>
+                <img id="showImg" src="../Image/AC.png" style="display: none;" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="show">Show</button>
+            
+            </div>
+            <div class="col">
+                <h4>hide()</h4>
+                <img id="hideImg" src="../Image/Deluxe_Room.jpg" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="hide">Hide</button>
+            </div>
+            <div class="col">
+                <h4>toggle()</h4>
+                <img id="toggleImg" src="../Image/flag.gif" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="toggle">Toggle</button>
+            </div>
+        </div>
+
+        <!----------------------------- Section_2 ----------------------------->
+        <div class="row mt-5" align="center" style="border: 1px solid green;">
+            <div class="col">
+                <h4>fade()</h4>
+                <img id="fadeImg" src="../Image/flag2.webp" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="fade">Fade</button>
+            </div>
+            <div class="col">
+                <h4>finish()</h4>
+                <img id="finishImg" src="../Image/Hotel_Locker.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="finish">Finish</button>
+            </div>
+            <div class="col">
+                <h4>slide()</h4>
+                <img id="slideImg" src="../Image/KFC_Loader_Gif.gif" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="slide">Slide</button>
+            </div>
+        </div>
+
+        <!----------------------------- Section_3 ----------------------------->
+        <div class="row mt-5" align="center" style="border: 1px solid blue;">
+            <div class="col">
+                <h4>slideToggle()</h4>
+                <img id="slideToggleImg" src="../Image/lady1.webp" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="slideToggle">Slide Toggle</button>
+            </div>
+            <div class="col">
+                <h4>fadeToggle()</h4>
+                <img id="fadeToggleImg" src="../Image/Mastercard.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="fadeToggle">Fade Toggle</button>
+            </div>
+            <div class="col">
+                <h4>clearQueue()</h4>
+                <img id="clearQueueImg" src="../Image/RuPay.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="clearQueue">Clear Queue</button>
+            </div>
+        </div>
+
+        <!----------------------------- Section_4 ----------------------------->
+        <div class="row mt-5" align="center" style="border: 1px solid black;">
+            <div class="col">
+                <h4>delay()</h4>
+                <img id="delayImg" src="../Image/Visa.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="delay">Delay</button>
+            </div>
+            <div class="col">
+                <h4>dequeue()</h4>
+                <img id="dequeueImg" src="../Image/Suite_Room.jpg" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="dequeue">Dequeue</button>
+            </div>
+            <div class="col">
+                <h4>animate()</h4>
+                <img id="animateImg" src="../Image/AC.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="animate">Animate</button>
+            </div>
+        </div>
+
+        <!----------------------------- Section_5 ----------------------------->
+        <div class="row mt-5" align="center" style="border: 1px solid red;">
+            <div class="col">
+                <h4>fadeIn()</h4>
+                <img id="fadeInImg" style="display: none;" src="../Image/Deluxe_Room.jpg" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="fadeIn">FadeIn</button>
+            </div>
+            <div class="col">
+                <h4>fadeOut()</h4>
+                <img id="fadeOutImg" src="../Image/Hotel_Locker.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="fadeOut">FadeOut</button>
+            </div>
+            <div class="col">
+                <h4>fadeTo()</h4>
+                <img id="fadeToImg" src="../Image/KFC_Loader_Gif.gif" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="fadeTo">FadeTo</button>
+            </div>
+        </div>
+
+        <!----------------------------- Section_6 ----------------------------->
+        <div class="row mt-5" align="center" style="border: 1px solid blue;">
+            <div class="col">
+                <h4>slideUp()</h4>
+                <img id="slideUpImg" src="../Image/lady1.webp" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="slideUp">SlideUP</button>
+            </div>
+            <div class="col">
+                <h4>slideDown()</h4>
+                <img id="slideDownImg" src="../Image/Suite_Room.jpg" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="slideDown">SlideDown</button>
+            </div>
+            <div id="stopWrapper" class="col">
+                <h4>stop()</h4>
+                <img id="stopImg" src="../Image/Visa.png" alt="" height="100" width="100"> <br>
+                <button class="mt-3" id="stop">Stop</button>
+            </div>
+        </div>
+     </div>
+    <script src="./48_Script.js"></script>
+</body>
+</html>
