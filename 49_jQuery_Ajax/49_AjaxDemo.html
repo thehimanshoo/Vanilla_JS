@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>JQuery AJAX</title>
+
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $.ajax({
+                method : "get",
+                url    : "./data/49_Data.txt",
+                success : function(response) {
+                   $("pre").html(response);
+                   console.log(response);
+                },
+                error   : function(JqXHR) {
+                    // for(var obj in JqXHR){
+                    //     console.log(obj);   // checking Properties persent in "JqXHR" Object
+                    // }
+                    alert(`Error : The requested content ${JqXHR.status} ${JqXHR.statusText}`);
+                    console.error(`Error : The requested content ${JqXHR.status} ${JqXHR.statusText}`);
+                }
+            })
+            })
+        })
+    </script>
+
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-nav navbar-brand" style="background-color: black; color: white; text-align: center;">
+        <h3>JQuery AJAX</h3>
+    </nav>
+
+    <div  class="mt-5" align="center">
+        <button class="mb-3">Get Data</button>
+        <pre></pre>
+    </div>
+    
+</body>
+</html>

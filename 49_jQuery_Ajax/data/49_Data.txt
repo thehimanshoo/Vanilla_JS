@@ -1,0 +1,60 @@
+jQuery Ajax
+----------------
+
+- AJAX is "Asynchronous JavaScript and XML".
+- Asynchronous allows to perform the given task without blocking other tasks.
+- JavaScript is used as a language for managing request and response.
+- XML is Extensible Markup Language, used to transport data.
+- It handles communication between Consumer and Provider.   
+
+
+            Consumer => Client => Sends Request => XML Format 
+            Provider => Server => Sends Response => XML Format 
+
+
+- Ajax is used to define "Partial PostBack".
+- It allows to design a page that can get new details and display without reloading complete page.
+- It is good for designing SPA [Single Page Application].
+- JavaScript handles AJAX by using "XmlHttpRequest" Object.
+- JavaScript uses "fetch()" promise which handles AJAX calls.
+
+    * Fetch has some problems that is :-
+        a) fetch returns response in binary form.
+        b) Convert binary into json().
+        c) Poor in Security [CORS (Cross Origin Resource Sharing)].
+        d) Poor in Error handling.
+
+    - jQuery provides AJAX methods to handle request.
+        * Advantage of usning AJAX.
+            a) Returns data into JSON().
+            b) Good Error handling.
+            c) Issues related to CORS. (jQuery Ajax also have some issue but it is better than javaScript, and simple as well).
+
+- jQuery Ajax methods -
+    $.getJSON()             : Only for reading JSON files.
+    $.ajax()                : for any types of content.
+
+    Syntax :-
+        $.ajax({ajaxSettings});
+
+        ajaxSetting = {
+            method  : "Get/Post/Put/Delete/Purge/Patch",
+            url     : "Source_location",
+            success : function(response){},
+            error   : function(error){}
+        }
+
+        [
+            Get     : It is for fetch the data.
+            Post    : It is for submit the data.
+            PUT     : It is for modify all details.
+            PATCH   : It is for modify some details.
+            PURGE   : It is for after deleting cleaning memory.
+        ]
+
+    {
+        JQuery AJAX
+        Asynchronous JavaScript and XML.
+        It is used for handling partial post back.
+    }
+    
