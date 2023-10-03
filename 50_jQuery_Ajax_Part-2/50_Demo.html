@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <title>JQuery Ajax</title>
+
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $.ajax({
+                    method      :  "get",
+                    url         :  "../19_Shopping_APP_(Complete)/19_index.html",
+                    success     : function(response) {
+                        $(".container").html(response);
+                    },
+                    error       : function(JqXHR) {
+                        console.error(`Error : The requested content ${JqXHR.status} ${JqXHR.statusText}`);
+                    }
+                })
+            })
+        })
+    </script>
+
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-nav navbar-brand text-center text-white bg-dark">
+        <h3>JQuery Ajax Part-2</h3>
+    </nav>
+
+    <div align="center">
+        <button class="mt-5 mb-5">Get Shopping Cart</button>
+
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+</html>
