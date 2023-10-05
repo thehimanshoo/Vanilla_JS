@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,28 @@
     <title>JQuery Ajax Part-3</title>
 
     <script>
-        $(function() {
-            $("button").click(function() {
+        $(function () {
+            $("button").click(function () {
                 $("tbody").html("");
                 $.ajax({
-                    method  : "get",
-                    url     : "https://fakestoreapi.com/products",
-                    success : function(products) {
+                    method: "get",
+                    url: "https://fakestoreapi.com/products",
+                    success: function (products) {
                         $.each(products, (key, product) => {
                             $(`
-                                <tr style="border: 1px solid black; display: flex; flex-direction: row; justify-content: space-around;">
-                                    <td  class="text-start col-6">${product.title}</td>
-                                    <td  class="text-center col-4" width="250"><img src="${product.image}" height="100" width="100"><img/></td>
-                                    <td  class="text-center col-2" class="text-center">${product.price}</td>
+                                <tr style="display: flex; flex-direction: row; 
+                                justify-content: space-around;">
+                                    <td style="border-left: double; border-right: double; border-bottom: double" class="text-start col-6">${product.title}</td>
+                                    <td  class="text-center col-4" width="250" style="border-bottom: double"><img 
+                                         src="${product.image}"          
+                                height="100" width="100"><img/></td>
+
+                                    <td  class="text-center col-2" class="text-center" style="border-right: double; border-left: double; border-bottom: double">${product.price}</td>
                                 </tr>
                             `).appendTo("tbody");
                         });
                     },
-                    error   : function(JqXHR) {
+                    error: function (JqXHR) {
                         console.error(`Error : The request for content ${JqXHR.status} ${JqXHR.statusText}`);
                     }
                 })
@@ -35,7 +40,8 @@
     </script>
 
 </head>
-<body class="container-fluid">
+
+<body class="container-fluid mb-5">
     <nav class="navbar navbar-nav navbar-brand navbar-dark bg-dark text-white text-center">
         <h3>JQuery Ajax Part-3</h3>
     </nav>
@@ -46,16 +52,17 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <table border="1" width="100%">
-                        <thead style="border: 1px solid black;" class="text-center">
-                            <tr style="border: 1px solid black; display: flex; flex-direction: row; justify-content: space-around;">
+                    <table width="100%">
+                        <thead style="border: double;" class="text-center">
+                            <tr style="display: flex; flex-direction: row; justify-content: 
+                                 space-around;">
                                 <th>Title</th>
                                 <th>Preview</th>
                                 <th>Price</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -63,4 +70,5 @@
         </div>
     </div>
 </body>
+
 </html>
