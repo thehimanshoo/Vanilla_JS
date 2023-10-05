@@ -11,6 +11,7 @@
     <script>
         $(function() {
             $("button").click(function() {
+                $("tbody").html("");
                 $.ajax({
                     method  : "get",
                     url     : "https://fakestoreapi.com/products",
