@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    
+    <title>jQuery Ajax</title>
+
+    <script>
+        $(function() {
+
+            // Logic to get ".txt" file data 
+            $("#txtData").click(() => {
+                // alert("Get Data buton has been clicked!");
+                $.ajax({
+                    method : "get",
+                    url : "../49_jQuery_Ajax/data/49_Data.txt",
+                    success : function(data) {
+                        console.log(data);
+                        $("#txt").html(data);
+                    
+                    },
+                    error : function(JqXHR, error) {
+                        alert(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
+                    }
+                })
+
+            });
+
+
+            // Logic to get "JSON" data of "fakestoreapi.com"
+            $("#jsonData").click(() => {
+            var count = 0;
+
+                $.getJSON({
+                    
+                    url : "https://fakestoreapi.com/products",
+                    success : function(data) {
+                        console.log("JSON Data :- ", data);
+
+                        $.each(data, (key, value) => {
+                            count++;
+                            $("p").append(`Id :- ${count} <br/> Title :- ${value.title} <br/> Prie :- ${value.price} <br/> Description :- ${value.description} <br/> <br/><br/>`);
+                        })
+                    
+                    },
+
+                    error : function(JqXHR) {
+                        alert(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
+                        console.error(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
+                    }
+                })
+            })
+        })
+        .ajaxStart(() => {
+            alert("Process initiated !");
+        })
+        .ajaxSuccess(() => {
+            alert("Process success !");
+        })
+        .ajaxError(() => {
+            alert("Error !!");
+        })
+        .ajaxSend(() => {
+            alert("Process sent to the Admin !");
+        })
+        .ajaxComplete(() => {
+            alert("Process Completed !");
+        });
+    </script>
+
+</head>
+<body class="container-fluid mb-5">
+    <nav class="navbar navbar-brand navbar-nav text-white bg-dark text-center">
+        <h3>JQuery Ajax</h3>
+    </nav>
+    <pre id="txt"></pre>
+    <p></p>
+
+    <button id="txtData" class="mt-5">Get txt File Data</button>
+    <button id="jsonData">Get Fakestore JSON Data</button>
+</body>
+</html> 
