@@ -9,118 +9,18 @@
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <title>Index</title>
 
-    <script>
-        
-        function LoadView(page) {
-            // $.get(page)
-            // .success((res) => {
-            //     $("main").html(res);
-            // })
-            // .error((JqXHR) => {
-            //     console.error(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
-            // });
-
-            // This is the another way to fetch data in jQuery Ajax
-
-            $.ajax({
-                method : "get",
-                url : page,
-                success : (res) => {
-                    $("#PageWrapper").html(res);
-                },
-            });
-        };
-
-        const LoadProduct = (URL) => {
-            $.ajax({
-                method: "get",
-                url: URL,
-                success: (products) => {
-                    $.each(products, (key, product) => {
-                        $(`
-                            <div class="card" style="width: 250px; margin-right: 35px; margin-bottom: 45px;">
-                                <img src="${product.image}" alt="" width="230px" height="190px" class="card-img-top"/>
-                                    <div class="card-header my-0 py-0 text-dark" style="height: 130px;">
-                                        <p>${product.title}</p>
-                                    </div>
-                                    <div class="card-body py-0 my-0 text-dark">
-                                        <dl>
-                                            <dt>Price</dt>
-                                            <dd>
-                                                <span class="text-dark">
-                                                    <strong>&#8377;</strong>
-                                                </span> ${product.price}
-                                            </dd>
-
-                                            <dt>Category</dt>
-                                            <dd>${product.category}</dd>
-
-                                            <dt>Rating</dt>
-                                            <dd>
-                                                <span class="bi bi-star-fill" style="color: #FF9529"></span>
-                                                ${product.rating.rate} [${product.rating.count}]
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-    `).appendTo("#ProductCatlog");
-                        console.log(product)
-                    });
-                },
-                error: (JqXHR) => {
-                    console.error(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
-                }
-            });
-        }
-
-        //  jQuery main function
-        $(function () {
-            LoadView("53_Home.html");
-
-            $("button").click((event) => {
-                switch (event.target.name) {
-                    case "btnHome":
-                    console.log("Home");
-                    LoadView("53_Home.html");
-                    break;
-
-                    case "btnLogin":
-                    console.log("Login");
-                    LoadView("53_Login.html");
-                    break;
-
-                    case "btnProducts":
-                    console.log("Products");
-                    LoadProduct("https://fakestoreapi.com/products");
-                    LoadView("53_Products.html");
-                    break;
-
-                    case "btnLogout":
-                    console.log("LogOut");
-                    LoadView("53_Login.html");
-                    break;
-                }
-            });
-        });
-    </script>
-
-<style>
-    #body{
-        position: sticky;
-        top: 0;
-    };
-</style>
-
 </head>
 
 <body id="body" style="margin-bottom: 200px;">
-    <header id="header" class="bg-dark text-white p-4 mb-2 h1 text-center"><i class="bi-cart4" style="margin-right: 5px;"></i>
-       Online Shopping App</header>
+    <header id="header" class="bg-dark text-white p-4 mb-2 h1 text-center"><i class="bi-cart4"
+            style="margin-right: 5px;"></i>
+        Online Shopping App <small id="User"
+            style="position: absolute; right: 70px; font-size: 25px; color: #1b5ee6;"></small></header>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item">
@@ -152,23 +52,33 @@
                                 name="btnLogout">
                                 <i class="fs-4 bi-box-arrow-in-left" style="margin-right: 5px;"></i> Logout
                             </button>
+                        </li><br />
+
+                        <li>
+                            <!-- Category -->
+                            <div>
+                                <label class="form-label" style="color: #1b5ee6;">Select Category</label>
+
+                                <div>
+                                    <select class="form-select">
+
+                                    </select>
+                                </div>
+                            </div>
                         </li>
 
-                    </ul> 
+                    </ul>
+
                 </div>
             </div>
 
-            <div class="col-9" id="PageWrapper">
-                
-            </div>
+            <div class="col-8" id="PageWrapper"></div>
+            <div class="col-2" id="AddToCartWrapper"></div>
 
-            <div class="col-1">
-                
-            </div>
         </div>
     </div>
 
-   
+    <script src="./53_Script.js"></script>
 </body>
 
 </html>

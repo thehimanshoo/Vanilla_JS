@@ -1,0 +1,37 @@
+
+
+<article>
+    <button id="ShowCart" class="btn btn-dark text-white w-100" style="padding: 14px;" data-bs-toggle="modal" data-bs-target="#cart">
+        <span class="bi bi-cart"></span> [<span id="lblCount"></span>] Your Cart
+    </button>
+
+    <div class="fade modal" id="cart">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"
+                    style="background: linear-gradient(45deg, black, #89CFF0); color: white; text-align: center;">
+                    <h2 class="justify-content-center align-items-center">Your Cart Items</h2>
+                    <button class="fade btn-close" data-bs-dismiss="modal" style="color: white;"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <div class="table-head">
+                            <tr>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Preview</th>
+                            </tr>
+                        </div>
+                        <div class="tbody" id="tableBody">
+                            
+                        </div>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
