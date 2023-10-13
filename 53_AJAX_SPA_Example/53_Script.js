@@ -28,7 +28,6 @@ function LoadView(page) {
         url: "53_AddToCart.html",
         success: (addToCartPage) => {
             $("#AddToCartWrapper").html(addToCartPage);
-            console.log(addToCartPage);
         },
         error: (JqXHR) => {
             console.error(`Error : ${JqXHR.status} ${JqXHR.statusText}`);
