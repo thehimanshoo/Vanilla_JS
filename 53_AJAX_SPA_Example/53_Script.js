@@ -224,20 +224,6 @@ $(function () {
 
 
     // Logic to show data, onclick of Your Cart
-    // $(document).on("click", "#ShowCart", () => {
-    //     $.each(AddToCartArray, (key, product) => {
-    //         console.table(`${product.title} + ${product.price} + ${product.rating.rate}`);
-    //         $("#tableBody").html(`
-    //         <tr>
-    //             <td>${product.title}</td>
-    //             <td>${product.price}</td>
-    //             <td><img src="${product.image}" alt="" height="50" width="50"></td>
-    //         </tr>
-    //         `);
-    //     })
-    //     $("#cart").appendTo("#PageWrapper");
-    // });
-
 
     $(document).on("click", "#ShowCart", () => {
         var prevData = $("#PageWrapper").html();
