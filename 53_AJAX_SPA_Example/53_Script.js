@@ -1,6 +1,3 @@
-
-
-
 // Logic to Load Page in PageWrapper class of Index.html
 function LoadView(page) {
     // $.get(page)
@@ -104,6 +101,7 @@ const LoginPage = () => {
         $.each(peopleData, (key, user) => {
 
             if (user.Username === name && user.Password === pass) {
+                $.cookie("username", name);
                 $("#User").text(name);
                 LoadProduct("https://fakestoreapi.com/products");
                 LoadView("53_Products.html");
@@ -123,7 +121,6 @@ const LoginPage = () => {
 
         // Logic for Try Again button
         $(document).on("click", "#tryAgain", () => {
-            $("#User").text("");
             LoadView("53_Login.html");
         });
     });
@@ -175,12 +172,20 @@ $(function () {
     LoadCategory();
     LoadView("53_Home.html");
 
+    // Adding functionality to Toggle Button
+    $(document).on("click", "#toggle", () => {
+        // alert("Toggler clicked");
+        $("body").toggleClass("themeChange");
+    });    
+
+
+    // Logic to load Products according to the dropdown option
     $(document).on("click", "button", (event) => {
         var name = event.target.name;
 
         switch (name) {
             case "btnHome":
-                console.log("Home");
+                // console.log("Home");
                 LoadView("53_Home.html");
                 break;
 
@@ -194,11 +199,17 @@ $(function () {
 
             case "btnProducts":
                 // console.log("Products");
-                LoadProduct("https://fakestoreapi.com/products");
-                LoadView("53_Products.html");
+                if($.cookie("username")== undefined){
+                    LoadView("53_Login.html");
+                }else{
+                    LoadProduct("https://fakestoreapi.com/products");
+                    LoadView("53_Products.html");
+                }
+                
                 break;
 
             case "btnLogout":
+                $.removeCookie("username");
                 $("#User").text("");
                 LoadView("53_Login.html");
                 break;
@@ -224,14 +235,13 @@ $(function () {
 
 
     // Logic to show data, onclick of Your Cart
-
+    
     $(document).on("click", "#ShowCart", () => {
-        var prevData = $("#PageWrapper").html();
-        var emptyData = $("#PageWrapper").html("");
+        let tableContent = "";
 
         if (AddToCartArray.length > 0) {
+
             function checkCart() {
-                let tableContent = "";
                 $.each(AddToCartArray, (key, product) => {
                     tableContent += `
                         <tr>
@@ -242,17 +252,16 @@ $(function () {
                     `;
                 });
     
-                $("#tableBody").html(tableContent);
-                // $(tableContent).appendTo(emptyData);
-                $("#targetCart").appendTo(emptyData);
-                $(emptyData).appendTo("#PageWrapper");
-                console.table(emptyData)
+                 // Update the table body with the tableContent
+                $(".table tbody").html(tableContent);
+
+                // Show the modal
+                $("#targetCart").modal("show");
             }
             checkCart();
         } else {
             alert("Cart is empty... Add items to the cart.");
         }
-    });
-    
 
+    });
 });

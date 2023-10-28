@@ -6,16 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
     <title>Index</title>
 
 </head>
 
 <body id="body" style="margin-bottom: 200px;">
-    <header id="header" class="bg-dark text-white p-4 mb-2 h1 text-center"><i class="bi-cart4"
-            style="margin-right: 5px;"></i>
+    <header id="header" class="bg-dark text-white p-4 mb-2 h1 text-center">
+        <label class="toggle" style="position: absolute; left: 25px;">
+            <input id="toggle" class="toggle-checkbox" type="checkbox" />
+            <div class="toggle-switch"></div>
+        </label>
+
+        <i class="bi-cart4" style="margin-right: 5px;"> </i>
         Online Shopping App <small id="User"
-            style="position: absolute; right: 70px; font-size: 25px; color: #1b5ee6;"></small></header>
+            style="position: absolute; right: 70px; font-size: 25px; color: #1b5ee6;"></small>
+    </header>
 
     <div class="container-fluid">
         <div class="row">
@@ -73,7 +90,9 @@
             </div>
 
             <div class="col-8" id="PageWrapper"></div>
-            <div class="col-2" id="AddToCartWrapper"></div>
+            <div class="col-2" id="AddToCartWrapper">
+                <div id="tableContent"></div>
+            </div>
 
         </div>
         <!-- <div class="row">
