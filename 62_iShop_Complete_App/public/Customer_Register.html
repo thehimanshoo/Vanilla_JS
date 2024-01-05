@@ -4,8 +4,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../src/css/styles.css" />
-
-    <title>login-form</title>
+    <title>Registration-form</title>
 </head>
 
 <body>
@@ -25,7 +24,7 @@
 
                     <div class="box-input">
                         <input type="text" class="input" id="txtUserId" placeholder=""
-                            style="background-color: transparent; border: none;" />
+                            style="background-color: transparent; border: none;" autocomplete="username"/>
                         <label for="txtUserId" class="login__label">User ID</label>
 
                     </div>
@@ -37,7 +36,7 @@
                     <i class="bi bi-person login__icon"></i>
 
                     <div class="box-input">
-                        <input type="text" class="input" id="txtUsername" placeholder="" />
+                        <input type="text" class="input" id="txtUsername" placeholder="" autocomplete="username"/>
                         <label for="txtUsername" class="login__label">Username</label>
 
                     </div>
@@ -49,7 +48,7 @@
                     <i class="ri-lock-2-line login__icon"></i>
 
                     <div class="box-input">
-                        <input type="password" class="input" id="txtPwd" placeholder="" />
+                        <input type="password" class="input" id="txtPwd" placeholder="" autocomplete="new-password"/>
                         <label for="txtPwd" class="login__label">Password</label>
 
                         <i class="ri-eye-off-line login__eye" id="login-eye"></i>
@@ -62,7 +61,7 @@
                     <i class="bi bi-calendar-date login__icon"></i>
 
                     <div class="box-input">
-                        <input type="number" class="input" id="txtAge" placeholder="" />
+                        <input type="number" class="input" id="txtAge" placeholder="" autocomplete="username"/>
                         <label for="txtAge" class="login__label">Age</label>
 
                     </div>
@@ -74,7 +73,7 @@
                     <i class="bi bi-envelope login__icon"></i>
 
                     <div class="box-input">
-                        <input type="email" class="input" id="txtEmail" placeholder="" />
+                        <input type="email" class="input" id="txtEmail" placeholder="" autocomplete="username"/>
                         <label for="txtEmail" class="login__label">Email</label>
 
                     </div>
@@ -86,7 +85,7 @@
                     <i class="bi bi-phone login__icon"></i>
 
                     <div class="box-input">
-                        <input type="text" class="input" id="txtMobile" placeholder="" />
+                        <input type="text" class="input" id="txtMobile" placeholder="" autocomplete="username"/>
                         <label for="txtMobile" class="login__label">Mobile No.</label>
 
                     </div>
@@ -100,6 +99,8 @@
         </form>
     </div>
 
+    <script src="./script.cjs"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

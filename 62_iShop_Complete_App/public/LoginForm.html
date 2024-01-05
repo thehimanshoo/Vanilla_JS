@@ -5,7 +5,6 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../src/css/styles.css" />
-
     <title>login-form</title>
 </head>
 
@@ -29,7 +28,7 @@
 
                     <div class="box-input">
                         <input type="text" class="input" id="txtLoginId" placeholder=""
-                            style="background-color: transparent; border: none;" />
+                            style="background-color: transparent; border: none;" autocomplete="username"/>
                         <label class="login__label">User ID</label>
 
                     </div>
@@ -39,7 +38,7 @@
                     <i class="ri-lock-2-line login__icon"></i>
 
                     <div class="box-input">
-                        <input type="password" id="appLoginPwd" class="input" id="txtLoginPwd" placeholder="" />
+                        <input type="password" id="appLoginPwd" class="input" placeholder="" autocomplete="current-password"/>
                         <label class="login__label">Password</label>
 
                         <i class="ri-eye-off-line login__eye" id="login-eye"></i>
@@ -61,6 +60,9 @@
             <p class="register">Don't have an account? <a href="./Customer_Register.html">Register</a></p>
         </form>
     </div>
+
+    <script src="./script.cjs"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

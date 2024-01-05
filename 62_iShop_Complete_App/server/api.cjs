@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 const conStr = "mongodb+srv://admin:admin@cluster0.8uig5cd.mongodb.net/eventsBookingDB?retryWrites=true&w=majority";
-const port = 4400;
+const port = 4000;
 const localhost = `http://localhost:${port}`;
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(express.json());
 /*
    Home Router
    Usage  : Get Home Page
-   URL    : http://localhost:4400
+   URL    : http://localhost:4000
    access : public
    method : Get
 */
@@ -36,7 +36,7 @@ app.get("/", async (req, res) => {
 /*
    Products Router
    Usage  : Get all Products
-   URL    : http://localhost:4400/products
+   URL    : http://localhost:4000/products
    access : public
    method : Get
 */
@@ -63,7 +63,7 @@ app.get("/products", async (req, res) => {
 /*
    Register Product
    Usage  : Post Product
-   URL    : http://localhost:4400/addproduct
+   URL    : http://localhost:4000/addproduct
    access : public
    method : Post
 */
@@ -125,7 +125,7 @@ app.post("/addproduct", [
 /*
    Customer Router
    Usage  : Get all Customers
-   URL    : http://localhost:4400/customers
+   URL    : http://localhost:4000/customers
    access : public
    method : Get
 */
@@ -151,7 +151,7 @@ app.get("/customers", async (req, res) => {
 /*
    Customer Login
    Usage  : Login User
-   URL    : http://localhost:4400/login
+   URL    : http://localhost:4000/login
    access : public
    method : post
 */
@@ -200,7 +200,7 @@ app.get("/login", [
 /*
    Customer Register
    Usage  : Register Customer
-   URL    : http://localhost:4400/registercustomer
+   URL    : http://localhost:4000/registercustomer
    access : public
    method : Post
 */
@@ -220,19 +220,14 @@ app.post("/registercustomer", [
         return console.log("All fields are required to fill");
     };
 
-    const validateField = (field, fieldName) => {
-        if (field === undefined || field === null || field == "") {
-            throw new Error(`Field : ${fieldName}`);
-        };
-    };
 
     const customerData = {
-        UserId: validateField(req.body.UserId, "UserId"),
-        UserName: validateField(req.body.UserName, "UserName"),
-        Password: validateField(req.body.Password, "Password"),
-        Age: validateField(parseInt(req.body.Age, "Age")),
-        Email: validateField(req.body.Email, "Email"),
-        Mobile: validateField(req.body.Mobile, "Mobile")
+        UserId: req.body.UserId,
+        UserName: req.body.UserName,
+        Password: req.body.Password,
+        Age: parseInt(req.body.Age),
+        Email: req.body.Email,
+        Mobile: req.body.Mobile
     };
 
     try {
@@ -240,8 +235,8 @@ app.post("/registercustomer", [
         const db = client.db("iShop");
         const customer = await db.collection("customers").insertOne(customerData);
 
-        console.log("Customer Successfully Registered...");
-        // res.redirect("/customers");
+        console.log(`Customer Successfully Registered : ${customer.insertedId}`);
+        res.redirect("/customers");
         client.close();
 
     } catch (err) {
@@ -253,7 +248,7 @@ app.post("/registercustomer", [
 /*
    Unwanted Router
    Usage  : Get Warning
-   URL    : http://localhost:4400/abc
+   URL    : http://localhost:4000/abc
    access : public
    method : Get
 */
@@ -267,9 +262,9 @@ app.get("*", (req, res) => {
 
                 API Provides only followings
                     <ol>
-                        <li> <a href="http://localhost:4400/">Home</a> </li>
-                        <li> <a href="http://localhost:4400/products">Products</a> </li>
-                        <li> <a href="http://localhost:4400/customers">Customers</a> </li>
+                        <li> <a href="http://localhost:4000/">Home</a> </li>
+                        <li> <a href="http://localhost:4000/products">Products</a> </li>
+                        <li> <a href="http://localhost:4000/customers">Customers</a> </li>
                 </ol>
             </h1>
         `);
