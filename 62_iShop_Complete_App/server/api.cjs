@@ -1,3 +1,4 @@
+const { body, validationResult } = require("express-validator");
 const mongoClient = require("mongodb").MongoClient;
 const express = require("express");
 const cors = require("cors");
@@ -67,18 +68,38 @@ app.get("/products", async (req, res) => {
    method : Post
 */
 
-app.post("/addproduct", async (req, res) => {
+app.post("/addproduct", [
+    body('ProductId').notEmpty().withMessage("ProductId is required..."),
+    body('Name').notEmpty().withMessage("Name is required..."),
+    body('Price').notEmpty().withMessage("Price is required..."),
+    body('Rate').notEmpty().withMessage("Rate is required..."),
+    body('count').notEmpty().withMessage("count is required..."),
+    body('CategoryId').notEmpty().withMessage("CategoryId is required..."),
+    body('stocks').notEmpty().withMessage("stocks is required..."),
+], async (req, res) => {
+
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(401).json({ msg: errors.array() });
+        return console.log("All fields of addProduct are required to fill");
+    };
+
+    const validateField = (field, fieldName) => {
+        if (field == undefined || field == null || field == "") {
+            throw new Error(`Field : ${fieldName}`);
+        };
+    };
 
     const product = {
-        ProductId: parseInt(req.body.ProductId),
-        Name: req.body.Name,
-        Price: parseFloat(req.body.Price),
+        ProductId: validateField(parseInt(req.body.ProductId), "ProductId"),
+        Name: validateField(req.body.Name, "Name"),
+        Price: validateField(parseFloat(req.body.Price), "Price"),
         Rating: {
-            Rate: req.body.Rating && req.body.Rating.Rate ? parseFloat(req.body.Rating.Rate) : 0,
-        count: req.body.Rating && req.body.Rating.count ? parseInt(req.body.Rating.count) : 0
+            Rate: validateField(req.body.Rating && req.body.Rating.Rate ? parseFloat(req.body.Rating.Rate) : 0, "Rate"),
+            count: validateField(req.body.Rating && req.body.Rating.count ? parseInt(req.body.Rating.count) : 0, "Count")
         },
-        CategoryId: parseInt(req.body.CategoryId),
-        stocks: (req.body.stocks == "true") ? true : false
+        CategoryId: validateField(parseInt(req.body.CategoryId), "CategoryId"),
+        stocks: validateField((req.body.stocks == "true") ? true : false, "Stocks")
     };
 
     try {
@@ -109,9 +130,9 @@ app.post("/addproduct", async (req, res) => {
    method : Get
 */
 
-app.get("/customers", async (req, res)=> {
+app.get("/customers", async (req, res) => {
 
-    try{
+    try {
         const client = await mongoClient.connect(conStr);
         const db = client.db("iShop");
         const customers = await db.collection("customers").find({}).toArray();
@@ -120,9 +141,59 @@ app.get("/customers", async (req, res)=> {
         res.send(customers);
         client.close();
 
-    }catch(err){
+    } catch (err) {
         console.error(err);
     };
+});
+
+
+
+/*
+   Customer Login
+   Usage  : Login User
+   URL    : http://localhost:4400/login
+   access : public
+   method : post
+*/
+
+
+app.get("/login", [
+    body('UserId').notEmpty().withMessage("UserId is required..."),
+    body('Password').notEmpty().withMessage("Password is required...")
+], async (req, res) => {
+
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(401).json({ msg: errors.array() });
+        return console.log("All Login fields are required to fill");
+    };
+
+    const validateField = (field, fieldName) => {
+        if (field == undefined || field == null || field == "") {
+            throw new Error(`Field : ${fieldName}`);
+        };
+    };
+
+
+    try {
+        let loginData = {
+            UserId: validateField(req.body.UserId, "UserId"),
+            Password: validateField(req.body.Password, "Password")
+        };
+
+        const client = await mongoClient.connect(conStr);
+        const db = client.db("iShop");
+        const customer = await db.collection('customers').find(loginData);
+
+        if(!customer.isEmpty()){
+            console.log("Login Successful");
+        }else{
+            alert("Users not exists...");
+        };
+
+    } catch (err) {
+        console.error(err);
+    }
 });
 
 
@@ -134,18 +205,37 @@ app.get("/customers", async (req, res)=> {
    method : Post
 */
 
-app.post("/registercustomer", async (req, res)=> {
+app.post("/registercustomer", [
+    body('UserId').notEmpty().withMessage("UserId is required..."),
+    body('UserName').notEmpty().withMessage("UserName is required..."),
+    body('Password').notEmpty().withMessage("Password is required..."),
+    body('Age').notEmpty().withMessage("Age is required..."),
+    body('Email').notEmpty().withMessage("Email is required..."),
+    body('Mobile').notEmpty().withMessage("Mobile is required...")
+], async (req, res) => {
 
-    const customerData = {
-        UserId : req.body.UserId,
-        UserName : req.body.UserName,
-        Password : req.body.Password,
-        Age : parseInt(req.body.Age),
-        Email : req.body.Email,
-        Mobile : req.body.Mobile,
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(401).json({ msg: errors.array() });
+        return console.log("All fields are required to fill");
     };
 
-    try{
+    const validateField = (field, fieldName) => {
+        if (field === undefined || field === null || field == "") {
+            throw new Error(`Field : ${fieldName}`);
+        };
+    };
+
+    const customerData = {
+        UserId: validateField(req.body.UserId, "UserId"),
+        UserName: validateField(req.body.UserName, "UserName"),
+        Password: validateField(req.body.Password, "Password"),
+        Age: validateField(parseInt(req.body.Age, "Age")),
+        Email: validateField(req.body.Email, "Email"),
+        Mobile: validateField(req.body.Mobile, "Mobile")
+    };
+
+    try {
         const client = await mongoClient.connect(conStr);
         const db = client.db("iShop");
         const customer = await db.collection("customers").insertOne(customerData);
@@ -154,10 +244,11 @@ app.post("/registercustomer", async (req, res)=> {
         // res.redirect("/customers");
         client.close();
 
-    }catch(err){
+    } catch (err) {
         console.error(err);
     };
 });
+
 
 /*
    Unwanted Router

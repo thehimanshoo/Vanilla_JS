@@ -13,7 +13,7 @@ const LoadPage = (pageUrl) => {
 
 // Main function
 $(document).ready(() => {
-    LoadPage("./Customer_Register.html");
+    LoadPage("./LoginForm.html");
 
     // 1.  Home button click logic
     $("#navHome").click(() => {
@@ -63,20 +63,30 @@ $(document).ready(() => {
 
     // 2.2  Customer Page 'Login' button click logic
     $(document).on("click", "#navbtnLogin", () => {
+        // alert("Nav Login button clicked")
         LoadPage("./LoginForm.html");
     });
 
 
     // 2.2.1  Login Page 'Login' button logic
-    $(document).on("click", "#btnAppLogin", () => {
-
-        let loginUserData = {
-            loginId: $("#txtLoginId").val(),
-            loginPwd: $("#appLoginPwd").val(),
-            rememberMe: ($("#login-check").is(":checked")) ? true : false
+    $(document).on("click", "#formBtnLogin", () => {
+        // alert("Hello from Login page");
+        const userDetails = {
+            UserId : $("#txtLoginId").val(),
+            Password : $("#txtLoginPwd").val(),
+            RememberMe : ($("#loginChk").val()).checked ? true : false
         };
 
-        alert(JSON.stringify(loginUserData))
+        $.ajax({
+            method : "get",
+            url : "http://localhost:4400/customers",
+            success : (data) => {
+                console.log(data);
+            },
+            error : (err) => {
+                console.error(err);
+            }
+        });
     });
 
     // Admin button click logic
