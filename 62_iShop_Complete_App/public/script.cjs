@@ -1,11 +1,13 @@
-
 // function to load page
-const LoadPage = (pageUrl) => {
+let LoadPage = (pageUrl) => {
     $.ajax({
         method: "get",
         url: pageUrl,
         success: (data) => {
             $("#targetSection").html(data);
+        },
+        error: (err) => {
+            console.error(err);
         }
     });
 };
@@ -16,14 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1.  Home button click logic
     $("#navHome").click(() => {
         LoadPage("./home.html");
-
-    })
+    });
 
     // 2.  Customer button click logic
     $("#navCustomer").click(() => {
         LoadPage("./customer.html");
-
-    })
+    });
 
     // 2.1  Register button of customer page button click logic
     $(document).on("click", "#navbtnRegister", () => {
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2.1.1  Register form button click logic
     $(document).on("click", "#formBtnRegister", (event) => {
         event.preventDefault();
+        // alert(clicked);
 
         let client = {
             UserId: $("#txtUserId").val(),
@@ -42,7 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
             Email: $("#txtEmail").val(),
             Mobile: $("#txtMobile").val(),
         };
-        // alert(JSON.stringify(client));
+
+        if (!(client.UserId && client.UserName && client.Password && client.Age && client.Email)) {
+            return alert("Kindly fill in all the details first!!");
+        } else alert(JSON.stringify(client));
 
         $.ajax({
             method: "post",
@@ -66,40 +70,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // 2.2.1  Login Page 'Login' button logic
-    $(document).on("click", "#formBtnLogin", (event) => {
+    $(document).on("click", "#LoginBtn", async (event) => {
         event.preventDefault();
-    
-        const userDetails = {
+
+        const loginUser = {
             UserId: $("#txtLoginId").val(),
-            Password: btoa($("#appLoginPwd").val()),
-            RememberMe: $("#loginChk").prop("checked"),
+            Password: btoa($("#appLoginPwd").val())
         };
-        console.log(JSON.stringify(userDetails));
-    
+        // alert(JSON.stringify(user))
+
         $.ajax({
             method: "get",
             url: "http://localhost:4000/customers",
             success: (data) => {
-                try {
-                    const userData = data.filter((user) => user.UserId === userDetails.UserId && user.Password === userDetails.Password);
-    
-                    if (userData.length > 0) {
-                        alert("Login Successful...");
-                        LoadPage("products.html");
-                    } else {
-                        alert("Invalid Credentials !!");
-                    };
-
-                } catch (error) {
-                    alert(error);
+                const user = data.find(userData => userData.UserId === loginUser.UserId && userData.Password === loginUser.Password);
+                if (!user) {
+                    alert("Invalid Credentials");
+                } else {
+                    alert("Login Successful...");
+                    $.cookie('UserId', $("#txtLoginId").val());
+                    LoadPage("products.html");
                 }
             },
             error: (err) => {
                 console.error(err);
             }
         });
+
+
     });
-    
 
 
     // Admin button click logic
@@ -112,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Products button click logic
     $("#navProducts").click(() => {
         LoadPage("./products.html");
+
 
     });
 

@@ -22,7 +22,6 @@ app.use(express.json());
 */
 
 app.get("/", async (req, res) => {
-
     try {
         res.send(`<h1>Welcome to Express JS Home page !! </h1>`);
 
@@ -153,7 +152,7 @@ app.get("/customers", async (req, res) => {
    Usage  : Login User
    URL    : http://localhost:4000/login
    access : public
-   method : post
+   method : get
 */
 
 

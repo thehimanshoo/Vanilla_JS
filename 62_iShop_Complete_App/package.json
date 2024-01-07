@@ -11,13 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "jquery": "^3.7.1",
+    "jquery.cookie": "^1.4.1",
+    "logger": "^0.0.1",
     "mongodb": "^6.3.0",
-    "sass": "^1.69.5"
+    "react-redux": "^9.0.4",
+    "redux": "^5.0.1",
+    "sass": "^1.69.5",
+    "thunk": "^0.0.1"
   }
 }
