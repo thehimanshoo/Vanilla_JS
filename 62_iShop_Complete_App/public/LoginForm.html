@@ -55,66 +55,10 @@
                 <a href="#" class="forgot">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="button" id="LoginBtn">Login</button>
+            <button type="submit" class="button" id="FormLoginBtn">Login</button>
 
             <p class="register">Don't have an account? <a href="./Customer_Register.html">Register</a></p>
         </form>
     </div>
-
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
-    <script type="module" src="./script.cjs"></script>
-    <script type="module" src="../node_modules/jquery/dist/jquery.min.js"></script>
-
-    <script>
-        $(document).on("click", "#formBtnLogin", (event) => {
-            event.preventDefault();
-
-            const userDetails = {
-                UserId: $("#txtLoginId").val(),
-                Password: btoa($("#appLoginPwd").val()),
-                RememberMe: $("#loginChk").prop("checked"),
-            };
-
-            if (!(userDetails.UserId && userDetails.Password)) {
-                return alert("Fill all details to Login !!");
-            };
-
-            $.ajax({
-                method: "get",
-                url: "http://localhost:4000/customers",
-                success: (data) => {
-                    try {
-                        const userData = data.filter(({ UserId, Password }) => UserId === userDetails.UserId && Password === userDetails.Password);
-
-                        if (userData.length > 0) {
-
-                            // If successfully logged in, then creating cookie of the user
-                            const createCookie = $.cookie('userId', $("#txtLoginId").val());
-                            if (!createCookie) {
-                                alert("cookie has not created !!");
-                            };
-
-                            alert("Login Successful...");
-                            return LoadPage("products.html");
-
-                        } else {
-                            alert("Invalid Credentials !!");
-                        };
-
-                    } catch (error) {
-                        alert(error);
-                    };
-
-                },
-                error: (err) => {
-                    console.error(err);
-                }
-            });
-
-        });
-    </script>
-
 </body>
-
 </html>

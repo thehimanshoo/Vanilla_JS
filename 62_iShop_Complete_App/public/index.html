@@ -10,22 +10,264 @@
     <script src="../node_modules/jquery/dist/jquery.js"></script>
 
     <style>
-        nav span {
-            margin-right: 20px;
-        };
-
+        nav span,
         aside span {
             margin-right: 20px;
+        }
+
+        ;
+    </style>
+
+
+    <script>
+        // function to load page
+        const LoadPage = (pageUrl) => {
+            $.ajax({
+                method: "get",
+                url: pageUrl,
+                success: (data) => {
+                    $("#targetSection").html(data);
+                },
+                error: (err) => {
+                    console.error(err);
+                }
+            });
+        };
+        const LoadProductImage = (imgUrl) => {
+            $.ajax({
+                method: "get",
+                url: "imgUrl",
+                success: (image) => {
+                    // $("#cardHeader").html(image);
+                    console.log(image)
+                },
+                error: (err) => {
+                    console.error(err);
+                }
+            })
         };
 
-    </style>
-    
+        document.addEventListener('DOMContentLoaded', function () {
+            LoadPage("./home.html");
+
+            // 1.  Home button click logic
+            $("#navHome").click(() => {
+                LoadPage("./home.html");
+            });
+
+            // 2.  Customer button click logic
+            $("#navCustomer").click(() => {
+                LoadPage("./customer.html");
+            });
+
+            // 2.1  Register button of customer page button click logic
+            $(document).on("click", "#navbtnRegister", () => {
+                LoadPage("./Customer_Register.html");
+            });
+
+            // 2.1.1  Register form button click logic
+            $(document).on("click", "#formBtnRegister", (event) => {
+                event.preventDefault();
+                // alert(clicked);
+
+                let client = {
+                    UserId: $("#txtUserId").val(),
+                    UserName: $("#txtUsername").val(),
+                    Password: btoa($("#txtPwd").val()),
+                    Age: parseInt($("#txtAge").val()),
+                    Email: $("#txtEmail").val(),
+                    Mobile: $("#txtMobile").val(),
+                };
+
+                if (!(client.UserId && client.UserName && client.Password && client.Age && client.Email)) {
+                    return alert("Kindly fill in all the details first!!");
+                } else alert(JSON.stringify(client));
+
+                $.ajax({
+                    method: "post",
+                    url: "http://localhost:4000/registercustomer",
+                    contentType: "application/json", // Set content type to JSON
+                    data: JSON.stringify(client), // Convert the client object to JSON
+                    success: () => {
+                        alert("Registered Successfully !!");
+                    },
+                    error: (err) => {
+                        alert(err);
+                    }
+                });
+            });
+
+
+            // 2.2  Customer Page 'Login' button click logic
+            $(document).on("click", "#navbtnLogin", () => {
+                LoadPage("./LoginForm.html");
+            });
+
+
+            // 2.2.1  Login Page 'Login' button logic
+            $(document).on("click", "#LoginBtn", async (event) => {
+                // event.preventDefault();
+                
+                const loginUser = {
+                    UserId: $("#txtLoginId").val(),
+                    Password: btoa($("#appLoginPwd").val())
+                };
+                alert(JSON.stringify(user))
+
+                $.ajax({
+                    method: "get",
+                    url: "http://localhost:4000/customers",
+                    success: (data) => {
+                        const user = data.find(userData => userData.UserId === loginUser.UserId && userData.Password === loginUser.Password);
+                        if (!user) {
+                           return alert("Invalid Credentials");
+                        } else {
+                            alert("Login Successful...");
+                            $.cookie('UserId', $("#txtLoginId").val());
+                            LoadPage("products.html");
+                        }
+                    },
+                    error: (err) => {
+                        console.error(err);
+                    }
+                });
+
+
+            });
+
+
+            // Admin button click logic
+            $("#navAdmin").click(() => {
+                LoadPage("./admin.html");
+
+            });
+
+
+            // Products button click logic
+            $("#navProducts").click(() => {
+                LoadPage("./products.html");
+
+                // Loading category data to the category
+                $.ajax({
+                    method: 'get',
+                    url: 'https://fakestoreapi.com/products/categories',
+                    success: (categories) => {
+                        categories.unshift("all");
+
+                        categories.map((category) => {
+                            const select = document.getElementById("lstCategories");
+                            const option = document.createElement("option");
+                            const fitstLetter = category.charAt(0).toUpperCase();
+                            const remainingLetter = category.slice(1).toLowerCase();
+
+                            option.value = category;
+                            option.innerText = fitstLetter + remainingLetter;
+                            select.appendChild(option);
+                        });
+                    },
+                    error: (err) => {
+                        console.log(err);
+                    }
+                });
+
+
+                // Loading Products to the card here
+                $.ajax({
+                    methond: 'get',
+                    url: 'https://fakestoreapi.com/products',
+                    success: (data) => {
+                        data.map((product) => {
+                            var div = document.createElement("div");
+                            div.className = "card";
+                            div.style.width = "250px";
+                            div.style.marginRight = "35px";
+                            div.style.marginBottom = "45px";
+
+                            div.innerHTML = `
+                                        <img src="${product.image}" alt="" 
+                                        width="230px" height="190px" class="card-img-top"/>
+
+                                        <div class="card-header my-0 py-0 text-dark" style="height: 130px;">
+                                            <p>${product.title}</p>
+                                        </div>
+                                        <div class="card-body py-0 my-0 text-dark">
+                                            <dl>
+                                                <dt>Price</dt>
+                                                <dd>
+                                                    <span class="text-dark">
+                                                    <strong>&#8377;</strong>
+                                                    </span> ${product.price}
+                                                </dd>
+
+                                                <dt>Category</dt>
+                                                <dd>${product.category}</dd>
+
+                                                <dt>Rating</dt>
+                                                <dd>
+                                                    <span class="bi bi-star-fill" style="color: #FF9529"></span>
+                                                    ${product.rating.rate} [${product.rating.count}]
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <div class="card-footer text-center text-dark">
+                                            <button id="btnAddProduct" class="btn btn-danger">
+                                                <span class="bi bi-cart2"></span> Add to Cart</button>
+                                        </div>`;
+
+                            document.querySelector("main").appendChild(div);
+                        });
+                    },
+                    error: (err) => {
+                        console.error(err);
+                    }
+
+                })
+            });
+
+            // Writing Logic to add Products to the cart
+            $(document).on("click", "#btnAddProduct", () => {
+                const productId = this.id;
+                const cart = [];
+
+                $.ajax({
+                    method: 'get',
+                    url: `https://fakestoreapi.com/products/${productId}`,
+                    success: (product) => {
+                        cart.push(product);
+                        console.log(cart);
+
+                        const numberOfAddedProducts = cart.lenght;
+                        document.getElementById("lblCount").innerText = numberOfAddedProducts;
+                    },
+                    error: (err) => {
+                        console.error(err);
+                    }
+                })
+
+
+            })
+
+            $(document).on("click", "#btnBuy", () => {
+                // alert("clicked")
+            })
+
+        });
+    </script>
+
 </head>
 
 <body class="container-fluid">
 
-    <header class="d-flex justify-content-between p-3 bg-dark text-white mt-2">
-        <div class="brand">I-Shop</div>
+    <header id="navHeader" class="d-flex justify-content-between p-3 bg-dark text-white mt-2">
+        <div style="width: 150px; display: flex; justify-content: space-between">
+            <div class="brand">I-Shop</div>
+            <button id="btnThemeChanger" style="background-color: transparent; 
+                color: white; 
+                border: none; 
+                align-items: center; 
+                text-align: center;">Light/Dark</button>
+        </div>
 
         <nav>
             <span><button class="bg-transparent text-white border-0" id="navHome">Home</button></span>
@@ -46,7 +288,7 @@
     <section id="targetSection">
 
     </section>
-    
+
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/jquery.cookie/jquery.cookie.js"></script>
     <script src="./script.cjs"></script>
